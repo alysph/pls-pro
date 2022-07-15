@@ -1,0 +1,2074 @@
+--------------------------------------------------------
+-- Archivo creado  - jueves-julio-14-2022   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Type LOGMNR$COL_GG_REC
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TYPE "SYSTEM"."LOGMNR$COL_GG_REC" as object
+(
+LOGMNR_UID NUMBER,
+OBJ# NUMBER,
+MD_COL_NAME VARCHAR2(384),
+MD_COL_NUM NUMBER,                 /* col# */
+MD_COL_SEGCOL NUMBER,              /* segcol# */
+MD_COL_TYPE NUMBER,                /* type# */
+MD_COL_LEN NUMBER,
+MD_COL_PREC NUMBER,                /* precision */
+MD_COL_SCALE NUMBER,
+MD_COL_CHARSETID NUMBER,           /* character set id */
+MD_COL_CHARSETFORM NUMBER,         /* character set form */
+MD_COL_ALT_TYPE VARCHAR2(4000),    /* adt type if any */
+MD_COL_ALT_PREC NUMBER,            /* precision of the adt attribute */
+MD_COL_ALT_CHAR_USED VARCHAR2(2),  /* charset used by the adt attribute */
+MD_COL_ALT_LENGTH NUMBER,          /* length of the adt attribute */
+MD_COL_ALT_XML_TYPE NUMBER,        /* 0/1. is xml_type column */
+MD_COL_ALT_BINARYXML_TYPE NUMBER,  /* 0/1. is xml_type stored as binary */
+MD_COL_ENC_ISENC VARCHAR2(3) ,     /* 'YES'/'NO' */
+MD_COL_ENC_NOSALT VARCHAR2(3) ,    /* 'YES'/'NO' */
+MD_COL_ENC_ISLOB VARCHAR2(3) ,     /* 'YES'/'NO' */
+MD_COL_ALT_OBJECTXML_TYPE NUMBER,  /* 0/1 xml_type stored as object */
+MD_COL_HASNOTNULLDEFAULT VARCHAR2(3) ,   /* 'YES'/'NO' */
+MD_COL_ALT_TYPE_OWNER VARCHAR2(384),  /* owner of the adt type if any */
+PROPERTY NUMBER,
+XCOLTYPEFLAGS NUMBER,
+XOPQTYPEFLAGS NUMBER,
+EAFLAGS NUMBER,
+XFQCOLNAME VARCHAR2(4000),
+SPARE1  NUMBER,                    /* col_def.nullable, based on col$.null$ */
+SPARE2  NUMBER,
+SPARE3  NUMBER,
+SPARE4  VARCHAR2(4000),
+SPARE5  VARCHAR2(4000),
+SPARE6  VARCHAR2(4000),
+/* Following fields added in 12.1.0.2 */
+OBJV# NUMBER,
+INTCOL# NUMBER,
+INTERVAL_LEADING_PRECISION NUMBER,
+INTERVAL_TRAILING_PRECISION NUMBER,
+TOID RAW(16),
+TYPENAME VARCHAR2(384),
+NUMINTCOLS NUMBER,
+NUMATTRS NUMBER,
+ADTORDER NUMBER,
+LOGMNR_SPARE1 NUMBER,             /* col$.null$ */
+LOGMNR_SPARE2 NUMBER,
+LOGMNR_SPARE3 VARCHAR2(1000),
+LOGMNR_SPARE4 DATE,
+LOGMNR_SPARE5 NUMBER,
+LOGMNR_SPARE6 NUMBER,
+LOGMNR_SPARE7 NUMBER,
+LOGMNR_SPARE8 NUMBER,
+LOGMNR_SPARE9 NUMBER,
+XTYPENAME VARCHAR2(4000),
+XTOPINTCOL NUMBER,
+XREFFEDTABLEOBJN NUMBER,
+XREFFEDTABLEOBJV NUMBER,
+XOPQTYPETYPE NUMBER,
+XOPQLOBINTCOL NUMBER,
+XOPQOBJINTCOL NUMBER,
+XXMLINTCOL    NUMBER,
+LOGMNRDERIVEDFLAGS NUMBER,
+/* Following fields added in 12.2 */
+COLLID      NUMBER,
+COLLINTCOL#  NUMBER,
+ACDRRESCOL# NUMBER
+);
+
+/
+--------------------------------------------------------
+--  DDL for Type LOGMNR$COL_GG_RECS
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TYPE "SYSTEM"."LOGMNR$COL_GG_RECS" AS TABLE OF  SYSTEM.LOGMNR$COL_GG_REC;
+
+/
+--------------------------------------------------------
+--  DDL for Type LOGMNR$GSBA_GG_REC
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TYPE "SYSTEM"."LOGMNR$GSBA_GG_REC" AS OBJECT
+(
+LOGMNR_UID NUMBER,
+NAME           VARCHAR2(384),
+VALUE          VARCHAR2(4000),
+LOGMNR_SPARE1  NUMBER,
+LOGMNR_SPARE2  NUMBER,
+LOGMNR_SPARE3  VARCHAR2(4000),
+LOGMNR_SPARE4  DATE
+);
+
+/
+--------------------------------------------------------
+--  DDL for Type LOGMNR$GSBA_GG_RECS
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TYPE "SYSTEM"."LOGMNR$GSBA_GG_RECS" AS TABLE OF  SYSTEM.LOGMNR$GSBA_GG_REC;
+
+/
+--------------------------------------------------------
+--  DDL for Type LOGMNR$KEY_GG_REC
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TYPE "SYSTEM"."LOGMNR$KEY_GG_REC" as object
+(
+LOGMNR_UID NUMBER,
+KEY# NUMBER,                   /* index obj# or con# */
+KEY_FLAGS NUMBER,              /* index or constraint */
+KEY_NAME VARCHAR2(384),        /* index name or constraint name */
+INDEX_OWNER# NUMBER,
+INDEX_OWNERNAME VARCHAR2(384),
+COLNAME VARCHAR2(384),
+INTCOL# NUMBER,
+which number,
+KEY_ORDER VARCHAR2(10),              /* asc or desc */
+KEYCOL_FLAGS NUMBER,           /* Column properties such as is_null */
+SPARE1  NUMBER,
+SPARE2  NUMBER,
+SPARE3  NUMBER,
+SPARE4  VARCHAR2(4000),
+SPARE5  VARCHAR2(4000),
+SPARE6  VARCHAR2(4000)
+);
+
+/
+--------------------------------------------------------
+--  DDL for Type LOGMNR$KEY_GG_RECS
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TYPE "SYSTEM"."LOGMNR$KEY_GG_RECS" AS TABLE OF  SYSTEM.LOGMNR$KEY_GG_REC;
+
+/
+--------------------------------------------------------
+--  DDL for Type LOGMNR$SEQ_GG_REC
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TYPE "SYSTEM"."LOGMNR$SEQ_GG_REC" as object
+(
+LOGMNR_UID NUMBER,
+OBJ# NUMBER,
+NAME VARCHAR2(384),
+OWNER# NUMBER,
+OWNERNAME VARCHAR2(384),
+FLAGS NUMBER,
+MD_TAB_SEQCACHE NUMBER,
+MD_TAB_SEQINCREMENTBY NUMBER,
+SPARE1  NUMBER,
+SPARE2  NUMBER,
+SPARE3  NUMBER,
+SPARE4  VARCHAR2(4000),
+SPARE5  VARCHAR2(4000),
+SPARE6  VARCHAR2(4000)
+);
+
+/
+--------------------------------------------------------
+--  DDL for Type LOGMNR$SEQ_GG_RECS
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TYPE "SYSTEM"."LOGMNR$SEQ_GG_RECS" AS TABLE OF  SYSTEM.LOGMNR$SEQ_GG_REC;
+
+/
+--------------------------------------------------------
+--  DDL for Type LOGMNR$TAB_GG_REC
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TYPE "SYSTEM"."LOGMNR$TAB_GG_REC" as object
+(
+LOGMNR_UID NUMBER,
+OBJ# NUMBER,
+BASEOBJV# NUMBER,
+MD_TAB_USERID NUMBER,                /* owner# */
+MD_TAB_COLCOUNT NUMBER,              /* user column count */
+MD_TAB_TOTAL_COL_NUM NUMBER,         /* kernal column count */
+MD_TAB_LOG_GROUP_EXISTS NUMBER,      /* Any log group exists for this table */
+MD_TAB_IOT VARCHAR2(3) ,             /* 'YES'/'NO' IS IOT? */
+MD_TAB_IOT_OVERFLOW VARCHAR2(3) ,    /* 'YES'/'NO' IOT with overflow ? */
+MD_TAB_PARTITION  VARCHAR2(3) ,      /* 'YES'/'NO' is partitioned ? */
+MD_TAB_SUBPARTITION VARCHAR2(3) ,    /* 'YES'/'NO' is sub partitioned? */
+MD_TAB_XMLTYPETABLE VARCHAR2(3) ,    /* 'YES'/'NO' is xmltype table? */
+MD_TAB_OBJECTID NUMBER,              /* object id if table object */
+MD_TAB_OWNER VARCHAR2(384),     /* owner name */
+MD_TAB_NAME VARCHAR2(384),      /* table name */
+MD_TAB_OBJTYPE VARCHAR2(384),   /* Object type name */
+MD_TAB_SCN NUMBER,                   /* COMMIT_SCN of this table version */
+TAB_FLAGS NUMBER,
+TRIGFLAG NUMBER,
+OBJ_FLAGS NUMBER,
+PROPERTY NUMBER,
+PARTTYPE NUMBER,
+SUBPARTTYPE NUMBER,
+SPARE1  NUMBER,
+SPARE2  NUMBER,
+SPARE3  NUMBER,
+SPARE4  VARCHAR2(4000),
+SPARE5  VARCHAR2(4000),
+SPARE6  VARCHAR2(4000),
+/* Following fields added in 12.1.0.2 */
+LVLCNT NUMBER,
+LVL1OBJ# NUMBER,
+LVL2OBJ# NUMBER,
+LVL1TYPE# NUMBER,
+LVL2TYPE# NUMBER,
+LVL1NAME  VARCHAR2(384),
+LVL2NAME  VARCHAR2(384),
+INTCOLS   NUMBER,
+ASSOC#    NUMBER,
+XIDUSN    NUMBER,
+XIDSLT    NUMBER,
+XIDSQN    NUMBER,
+DROP_SCN  NUMBER,
+FLAGS     NUMBER,
+LOGMNR_SPARE1   NUMBER,
+LOGMNR_SPARE2   NUMBER,
+LOGMNR_SPARE3   VARCHAR2(1000),
+LOGMNR_SPARE4   DATE,
+LOGMNR_SPARE5   NUMBER,
+LOGMNR_SPARE6   NUMBER,
+LOGMNR_SPARE7   NUMBER,
+LOGMNR_SPARE8   NUMBER,
+LOGMNR_SPARE9   NUMBER,
+UNSUPPORTEDCOLS  NUMBER,
+COMPLEXTYPECOLS  NUMBER,
+NTPARENTOBJNUM   NUMBER,
+NTPARENTOBJVERSION NUMBER,
+NTPARENTINTCOLNUM  NUMBER,
+LOGMNRTLOFLAGS    NUMBER,
+LOGMNRMCV VARCHAR2(30),
+/* Following fields added in 12.2 */
+ACDRFLAGS        NUMBER,                                    /* automatic CDR */
+ACDRTSOBJ#       NUMBER,                                    /* automatic CDR */
+ACDRROWTSINTCOL# NUMBER                                     /* automatic CDR */
+);
+
+/
+--------------------------------------------------------
+--  DDL for Type LOGMNR$TAB_GG_RECS
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TYPE "SYSTEM"."LOGMNR$TAB_GG_RECS" AS TABLE OF  SYSTEM.LOGMNR$TAB_GG_REC;
+
+/
+--------------------------------------------------------
+--  DDL for Type LOGMNR$USER_GG_REC
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TYPE "SYSTEM"."LOGMNR$USER_GG_REC" AS OBJECT
+(
+LOGMNR_UID     NUMBER,
+USERNAME       VARCHAR2(384),
+USERID         NUMBER,
+LOGMNR_SPARE1  NUMBER,
+LOGMNR_SPARE2  NUMBER,
+LOGMNR_SPARE3  VARCHAR2(4000),
+LOGMNR_SPARE4  DATE
+);
+
+/
+--------------------------------------------------------
+--  DDL for Type LOGMNR$USER_GG_RECS
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TYPE "SYSTEM"."LOGMNR$USER_GG_RECS" AS TABLE OF  SYSTEM.LOGMNR$USER_GG_REC;
+
+/
+--------------------------------------------------------
+--  DDL for Sequence LOGMNR_DIDS$
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "SYSTEM"."LOGMNR_DIDS$"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 NOCACHE  ORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+--------------------------------------------------------
+--  DDL for Sequence LOGMNR_EVOLVE_SEQ$
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "SYSTEM"."LOGMNR_EVOLVE_SEQ$"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 NOCACHE  ORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+--------------------------------------------------------
+--  DDL for Sequence LOGMNR_SEQ$
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "SYSTEM"."LOGMNR_SEQ$"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 NOCACHE  ORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+--------------------------------------------------------
+--  DDL for Sequence LOGMNR_UIDS$
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "SYSTEM"."LOGMNR_UIDS$"  MINVALUE 100 MAXVALUE 99999 INCREMENT BY 1 START WITH 100 NOCACHE  ORDER  CYCLE  NOKEEP  NOSCALE  GLOBAL ;
+--------------------------------------------------------
+--  DDL for Sequence MVIEW$_ADVSEQ_GENERIC
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "SYSTEM"."MVIEW$_ADVSEQ_GENERIC"  MINVALUE 1 MAXVALUE 4294967295 INCREMENT BY 1 START WITH 1 CACHE 50 NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+--------------------------------------------------------
+--  DDL for Sequence MVIEW$_ADVSEQ_ID
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "SYSTEM"."MVIEW$_ADVSEQ_ID"  MINVALUE 1 MAXVALUE 4294967295 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+--------------------------------------------------------
+--  DDL for Sequence ROLLING_EVENT_SEQ$
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "SYSTEM"."ROLLING_EVENT_SEQ$"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 NOCACHE  ORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+--------------------------------------------------------
+--  DDL for Table AUTH_GROUP
+--------------------------------------------------------
+
+  CREATE TABLE "C##EXAMEN"."AUTH_GROUP" 
+   (	"ID" NUMBER(11,0) GENERATED BY DEFAULT ON NULL AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE , 
+	"NAME" NVARCHAR2(150)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table AUTH_GROUP_PERMISSIONS
+--------------------------------------------------------
+
+  CREATE TABLE "C##EXAMEN"."AUTH_GROUP_PERMISSIONS" 
+   (	"ID" NUMBER(19,0) GENERATED BY DEFAULT ON NULL AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE , 
+	"GROUP_ID" NUMBER(11,0), 
+	"PERMISSION_ID" NUMBER(11,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table AUTH_PERMISSION
+--------------------------------------------------------
+
+  CREATE TABLE "C##EXAMEN"."AUTH_PERMISSION" 
+   (	"ID" NUMBER(11,0) GENERATED BY DEFAULT ON NULL AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE , 
+	"NAME" NVARCHAR2(255), 
+	"CONTENT_TYPE_ID" NUMBER(11,0), 
+	"CODENAME" NVARCHAR2(100)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table AUTH_USER
+--------------------------------------------------------
+
+  CREATE TABLE "C##EXAMEN"."AUTH_USER" 
+   (	"ID" NUMBER(11,0) GENERATED BY DEFAULT ON NULL AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE , 
+	"PASSWORD" NVARCHAR2(128), 
+	"LAST_LOGIN" TIMESTAMP (6), 
+	"IS_SUPERUSER" NUMBER(1,0), 
+	"USERNAME" NVARCHAR2(150), 
+	"FIRST_NAME" NVARCHAR2(150), 
+	"LAST_NAME" NVARCHAR2(150), 
+	"EMAIL" NVARCHAR2(254), 
+	"IS_STAFF" NUMBER(1,0), 
+	"IS_ACTIVE" NUMBER(1,0), 
+	"DATE_JOINED" TIMESTAMP (6)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table AUTH_USER_GROUPS
+--------------------------------------------------------
+
+  CREATE TABLE "C##EXAMEN"."AUTH_USER_GROUPS" 
+   (	"ID" NUMBER(19,0) GENERATED BY DEFAULT ON NULL AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE , 
+	"USER_ID" NUMBER(11,0), 
+	"GROUP_ID" NUMBER(11,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table AUTH_USER_USER_PERMISSIONS
+--------------------------------------------------------
+
+  CREATE TABLE "C##EXAMEN"."AUTH_USER_USER_PERMISSIONS" 
+   (	"ID" NUMBER(19,0) GENERATED BY DEFAULT ON NULL AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE , 
+	"USER_ID" NUMBER(11,0), 
+	"PERMISSION_ID" NUMBER(11,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table BLOG_CATEGORIA
+--------------------------------------------------------
+
+  CREATE TABLE "C##EXAMEN"."BLOG_CATEGORIA" 
+   (	"ID" NUMBER(19,0) GENERATED BY DEFAULT ON NULL AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE , 
+	"NOMBRE" NVARCHAR2(50), 
+	"CREATED" TIMESTAMP (6), 
+	"UPDATED" TIMESTAMP (6)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table BLOG_POST
+--------------------------------------------------------
+
+  CREATE TABLE "C##EXAMEN"."BLOG_POST" 
+   (	"ID" NUMBER(19,0) GENERATED BY DEFAULT ON NULL AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE , 
+	"TITULO" NVARCHAR2(50), 
+	"CONTENIDO" NVARCHAR2(100), 
+	"IMAGEN" NVARCHAR2(100), 
+	"CREATED" TIMESTAMP (6), 
+	"UPDATED" TIMESTAMP (6), 
+	"AUTOR_ID" NUMBER(11,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table BLOG_POST_CATEGORIAS
+--------------------------------------------------------
+
+  CREATE TABLE "C##EXAMEN"."BLOG_POST_CATEGORIAS" 
+   (	"ID" NUMBER(19,0) GENERATED BY DEFAULT ON NULL AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE , 
+	"POST_ID" NUMBER(19,0), 
+	"CATEGORIA_ID" NUMBER(19,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table DJANGO_ADMIN_LOG
+--------------------------------------------------------
+
+  CREATE TABLE "C##EXAMEN"."DJANGO_ADMIN_LOG" 
+   (	"ID" NUMBER(11,0) GENERATED BY DEFAULT ON NULL AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE , 
+	"ACTION_TIME" TIMESTAMP (6), 
+	"OBJECT_ID" NCLOB, 
+	"OBJECT_REPR" NVARCHAR2(200), 
+	"ACTION_FLAG" NUMBER(11,0), 
+	"CHANGE_MESSAGE" NCLOB, 
+	"CONTENT_TYPE_ID" NUMBER(11,0), 
+	"USER_ID" NUMBER(11,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" 
+ LOB ("OBJECT_ID") STORE AS SECUREFILE (
+  TABLESPACE "USERS" ENABLE STORAGE IN ROW 4000 CHUNK 8192
+  NOCACHE LOGGING  NOCOMPRESS  KEEP_DUPLICATES 
+  STORAGE(INITIAL 262144 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)) 
+ LOB ("CHANGE_MESSAGE") STORE AS SECUREFILE (
+  TABLESPACE "USERS" ENABLE STORAGE IN ROW 4000 CHUNK 8192
+  NOCACHE LOGGING  NOCOMPRESS  KEEP_DUPLICATES 
+  STORAGE(INITIAL 262144 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)) ;
+--------------------------------------------------------
+--  DDL for Table DJANGO_CONTENT_TYPE
+--------------------------------------------------------
+
+  CREATE TABLE "C##EXAMEN"."DJANGO_CONTENT_TYPE" 
+   (	"ID" NUMBER(11,0) GENERATED BY DEFAULT ON NULL AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE , 
+	"APP_LABEL" NVARCHAR2(100), 
+	"MODEL" NVARCHAR2(100)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table DJANGO_MIGRATIONS
+--------------------------------------------------------
+
+  CREATE TABLE "C##EXAMEN"."DJANGO_MIGRATIONS" 
+   (	"ID" NUMBER(19,0) GENERATED BY DEFAULT ON NULL AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE , 
+	"APP" NVARCHAR2(255), 
+	"NAME" NVARCHAR2(255), 
+	"APPLIED" TIMESTAMP (6)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table DJANGO_SESSION
+--------------------------------------------------------
+
+  CREATE TABLE "C##EXAMEN"."DJANGO_SESSION" 
+   (	"SESSION_KEY" NVARCHAR2(40), 
+	"SESSION_DATA" NCLOB, 
+	"EXPIRE_DATE" TIMESTAMP (6)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" 
+ LOB ("SESSION_DATA") STORE AS SECUREFILE (
+  TABLESPACE "USERS" ENABLE STORAGE IN ROW 4000 CHUNK 8192
+  NOCACHE LOGGING  NOCOMPRESS  KEEP_DUPLICATES 
+  STORAGE(INITIAL 262144 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)) ;
+--------------------------------------------------------
+--  DDL for Table LINEAPEDIDOS
+--------------------------------------------------------
+
+  CREATE TABLE "C##EXAMEN"."LINEAPEDIDOS" 
+   (	"ID" NUMBER(19,0) GENERATED BY DEFAULT ON NULL AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE , 
+	"CANTIDAD" NUMBER(11,0), 
+	"CREATED_AT" TIMESTAMP (6), 
+	"PEDIDO_ID" NUMBER(19,0), 
+	"PRODUCTO_ID" NUMBER(19,0), 
+	"USER_ID" NUMBER(11,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table PEDIDOS
+--------------------------------------------------------
+
+  CREATE TABLE "C##EXAMEN"."PEDIDOS" 
+   (	"ID" NUMBER(19,0) GENERATED BY DEFAULT ON NULL AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE , 
+	"CREATED_AT" TIMESTAMP (6), 
+	"USER_ID" NUMBER(11,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table SERVICIOS_SERVICIO
+--------------------------------------------------------
+
+  CREATE TABLE "C##EXAMEN"."SERVICIOS_SERVICIO" 
+   (	"ID" NUMBER(19,0) GENERATED BY DEFAULT ON NULL AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE , 
+	"TITULO" NVARCHAR2(50), 
+	"CONTENIDO" NVARCHAR2(50), 
+	"IMAGEN" NVARCHAR2(100), 
+	"CREATED" TIMESTAMP (6), 
+	"UPDATED" TIMESTAMP (6)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table TIENDA_CATEGORIAPROD
+--------------------------------------------------------
+
+  CREATE TABLE "C##EXAMEN"."TIENDA_CATEGORIAPROD" 
+   (	"ID" NUMBER(19,0) GENERATED BY DEFAULT ON NULL AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE , 
+	"NOMBRE" NVARCHAR2(50), 
+	"CREATED" TIMESTAMP (6), 
+	"UPDATED" TIMESTAMP (6)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table TIENDA_CLIENTE
+--------------------------------------------------------
+
+  CREATE TABLE "C##EXAMEN"."TIENDA_CLIENTE" 
+   (	"RUT" NVARCHAR2(20), 
+	"NOMBRE" NVARCHAR2(50), 
+	"CORREO" NVARCHAR2(30), 
+	"TELEFONO" NUMBER(11,0), 
+	"DIRECCION" NVARCHAR2(50), 
+	"GENERO_ID" NUMBER(11,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table TIENDA_GENERO
+--------------------------------------------------------
+
+  CREATE TABLE "C##EXAMEN"."TIENDA_GENERO" 
+   (	"IDGENERO" NUMBER(11,0), 
+	"NOMBREGENERO" NVARCHAR2(50)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table TIENDA_PRODUCTO
+--------------------------------------------------------
+
+  CREATE TABLE "C##EXAMEN"."TIENDA_PRODUCTO" 
+   (	"ID" NUMBER(19,0) GENERATED BY DEFAULT ON NULL AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE , 
+	"NOMBRE" NVARCHAR2(50), 
+	"IMAGEN" NVARCHAR2(100), 
+	"PRECIO" FLOAT(126), 
+	"DISPONIBILIDAD" NUMBER(1,0), 
+	"CATEGORIAS_ID" NUMBER(19,0), 
+	"CREATED" TIMESTAMP (6) DEFAULT NULL, 
+	"UPDATED" TIMESTAMP (6) DEFAULT NULL
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for View MVIEW_EVALUATIONS
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "SYSTEM"."MVIEW_EVALUATIONS" ("RUNID", "MVIEW_OWNER", "MVIEW_NAME", "RANK", "STORAGE_IN_BYTES", "FREQUENCY", "CUMULATIVE_BENEFIT", "BENEFIT_TO_COST_RATIO") AS 
+  select
+  t1.runid# as runid,
+  summary_owner AS mview_owner,
+  summary_name AS mview_name,
+  rank# as rank,
+  storage_in_bytes,
+  frequency,
+  cumulative_benefit,
+  benefit_to_cost_ratio
+from SYSTEM.MVIEW$_ADV_OUTPUT t1, SYSTEM.MVIEW$_ADV_LOG t2, ALL_USERS u
+where
+  t1.runid# = t2.runid# and
+  u.username = t2.uname and
+  u.user_id = userenv('SCHEMAID') and
+  t1.output_type = 1
+order by t1.rank#;
+
+   COMMENT ON TABLE "SYSTEM"."MVIEW_EVALUATIONS"  IS 'This view gives DBA access to summary evaluation output'
+;
+--------------------------------------------------------
+--  DDL for View MVIEW_EXCEPTIONS
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "SYSTEM"."MVIEW_EXCEPTIONS" ("RUNID", "OWNER", "TABLE_NAME", "DIMENSION_NAME", "RELATIONSHIP", "BAD_ROWID") AS 
+  select
+  t1.runid# as runid,
+  owner,
+  table_name,
+  dimension_name,
+  relationship,
+  bad_rowid
+from SYSTEM.MVIEW$_ADV_EXCEPTIONS t1, SYSTEM.MVIEW$_ADV_LOG t2, ALL_USERS u
+where
+  t1.runid# = t2.runid# and
+  u.username = t2.uname and
+  u.user_id = userenv('SCHEMAID');
+
+   COMMENT ON TABLE "SYSTEM"."MVIEW_EXCEPTIONS"  IS 'This view gives DBA access to dimension validation results'
+;
+--------------------------------------------------------
+--  DDL for View MVIEW_FILTER
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "SYSTEM"."MVIEW_FILTER" ("FILTERID", "SUBFILTERNUM", "SUBFILTERTYPE", "STR_VALUE", "NUM_VALUE1", "NUM_VALUE2", "DATE_VALUE1", "DATE_VALUE2") AS 
+  select
+      a.filterid# as filterid,
+      a.subfilternum# as subfilternum,
+      decode(a.subfiltertype,1,'APPLICATION',2,'CARDINALITY',3,'LASTUSE',
+                             4,'FREQUENCY',5,'USER',6,'PRIORITY',7,'BASETABLE',
+                             8,'RESPONSETIME',9,'COLLECTIONID',10,'TRACENAME',
+                             11,'SCHEMA','UNKNOWN') AS subfiltertype,
+      a.str_value,
+      to_number(decode(a.num_value1,-999,NULL,a.num_value1)) AS num_value1,
+      to_number(decode(a.num_value2,-999,NULL,a.num_value2)) AS num_value2,
+      a.date_value1,
+      a.date_value2
+   from system.mview$_adv_filter a, system.mview$_adv_log b, ALL_USERS u
+   WHERE a.filterid# = b.runid#
+   AND b.uname = u.username
+   AND u.user_id = userenv('SCHEMAID');
+
+   COMMENT ON TABLE "SYSTEM"."MVIEW_FILTER"  IS 'Workload filter records'
+;
+--------------------------------------------------------
+--  DDL for View MVIEW_FILTERINSTANCE
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "SYSTEM"."MVIEW_FILTERINSTANCE" ("RUNID", "FILTERID", "SUBFILTERNUM", "SUBFILTERTYPE", "STR_VALUE", "NUM_VALUE1", "NUM_VALUE2", "DATE_VALUE1", "DATE_VALUE2") AS 
+  select
+      a.runid# as runid,
+      a.filterid# as filterid,
+      a.subfilternum# as subfilternum,
+      decode(a.subfiltertype,1,'APPLICATION',2,'CARDINALITY',3,'LASTUSE',
+                             4,'FREQUENCY',5,'USER',6,'PRIORITY',7,'BASETABLE',
+                             8,'RESPONSETIME',9,'COLLECTIONID',10,'TRACENAME',
+                             11,'SCHEMA','UNKNOWN') AS subfiltertype,
+      a.str_value,
+      to_number(decode(a.num_value1,-999,NULL,a.num_value1)) AS num_value1,
+      to_number(decode(a.num_value2,-999,NULL,a.num_value2)) AS num_value2,
+      a.date_value1,
+      a.date_value2
+   from system.mview$_adv_filterinstance a;
+
+   COMMENT ON TABLE "SYSTEM"."MVIEW_FILTERINSTANCE"  IS 'Workload filter instance records'
+;
+--------------------------------------------------------
+--  DDL for View MVIEW_LOG
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "SYSTEM"."MVIEW_LOG" ("ID", "FILTERID", "RUN_BEGIN", "RUN_END", "TYPE", "STATUS", "MESSAGE", "COMPLETED", "TOTAL", "ERROR_CODE") AS 
+  select
+      m.runid# as id,
+      m.filterid# as filterid,
+      m.run_begin,
+      m.run_end,
+      decode(m.run_type,1,'EVALUATE',2,'EVALUATE_W',3,'RECOMMEND',
+                      4,'RECOMMEND_W',5,'VALIDATE',6,'WORKLOAD',
+                      7,'FILTER','UNKNOWN') AS type,
+      decode(m.status,0,'UNUSED',1,'CANCELLED',2,'IN_PROGRESS',3,'COMPLETED',
+                    4,'ERROR','UNKNOWN') AS status,
+      m.message,
+      m.completed,
+      m.total,
+      m.error_code
+   from system.mview$_adv_log m, all_users u
+   where m.uname = u.username
+   and   u.user_id = userenv('SCHEMAID');
+
+   COMMENT ON TABLE "SYSTEM"."MVIEW_LOG"  IS 'Advisor session log'
+;
+--------------------------------------------------------
+--  DDL for View MVIEW_RECOMMENDATIONS
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "SYSTEM"."MVIEW_RECOMMENDATIONS" ("RUNID", "ALL_TABLES", "FACT_TABLES", "GROUPING_LEVELS", "QUERY_TEXT", "RECOMMENDATION_NUMBER", "RECOMMENDED_ACTION", "MVIEW_OWNER", "MVIEW_NAME", "STORAGE_IN_BYTES", "PCT_PERFORMANCE_GAIN", "BENEFIT_TO_COST_RATIO") AS 
+  select
+  t1.runid# as runid,
+  t1.from_clause as all_tables,
+  fact_tables,
+  grouping_levels,
+  query_text,
+  rank# as recommendation_number,
+  action_type as recommended_action,
+  summary_owner as mview_owner,
+  summary_name as mview_name,
+  storage_in_bytes,
+  pct_performance_gain,
+  benefit_to_cost_ratio
+from SYSTEM.MVIEW$_ADV_OUTPUT t1, SYSTEM.MVIEW$_ADV_LOG t2, ALL_USERS u
+where
+  t1.runid# = t2.runid# and
+  u.username = t2.uname and
+  u.user_id = userenv('SCHEMAID') and
+  t1.output_type = 0
+order by t1.rank#;
+
+   COMMENT ON TABLE "SYSTEM"."MVIEW_RECOMMENDATIONS"  IS 'This view gives DBA access to summary recommendations'
+;
+--------------------------------------------------------
+--  DDL for View MVIEW_WORKLOAD
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "SYSTEM"."MVIEW_WORKLOAD" ("WORKLOADID", "IMPORT_TIME", "QUERYID", "APPLICATION", "CARDINALITY", "RESULTSIZE", "LASTUSE", "FREQUENCY", "OWNER", "PRIORITY", "QUERY", "RESPONSETIME") AS 
+  select
+  a.collectionid# as workloadid,
+  a.collecttime as import_time,
+  a.queryid# as queryid,
+  a.application,
+  a.cardinality,
+  a.resultsize,
+  a.qdate as lastuse,
+  a.frequency,
+  a.uname as owner,
+  a.priority,
+  a.sql_text as query,
+  a.exec_time as responsetime
+from SYSTEM.MVIEW$_ADV_WORKLOAD A, SYSTEM.MVIEW$_ADV_LOG B, ALL_USERS D
+WHERE a.collectionid# = b.runid#
+AND b.uname = d.username
+AND d.user_id = userenv('SCHEMAID');
+
+   COMMENT ON TABLE "SYSTEM"."MVIEW_WORKLOAD"  IS 'This view gives DBA access to shared workload'
+;
+--------------------------------------------------------
+--  DDL for View PRODUCT_PRIVS
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "SYSTEM"."PRODUCT_PRIVS" ("PRODUCT", "USERID", "ATTRIBUTE", "SCOPE", "NUMERIC_VALUE", "CHAR_VALUE", "DATE_VALUE", "LONG_VALUE") AS 
+  SELECT PRODUCT, USERID, ATTRIBUTE, SCOPE,
+         NUMERIC_VALUE, CHAR_VALUE, DATE_VALUE, LONG_VALUE
+  FROM SQLPLUS_PRODUCT_PROFILE
+  WHERE USERID = 'PUBLIC' OR
+        USERID LIKE SYS_CONTEXT('USERENV','CURRENT_USER')
+;
+  GRANT READ ON "SYSTEM"."PRODUCT_PRIVS" TO PUBLIC;
+--------------------------------------------------------
+--  DDL for View SCHEDULER_JOB_ARGS
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "SYSTEM"."SCHEDULER_JOB_ARGS" ("OWNER", "JOB_NAME", "ARGUMENT_NAME", "ARGUMENT_POSITION", "ARGUMENT_TYPE", "VALUE", "ANYDATA_VALUE", "OUT_ARGUMENT") AS 
+  SELECT "OWNER","JOB_NAME","ARGUMENT_NAME","ARGUMENT_POSITION","ARGUMENT_TYPE","VALUE","ANYDATA_VALUE","OUT_ARGUMENT" FROM sys.all_scheduler_job_args
+;
+  GRANT SELECT ON "SYSTEM"."SCHEDULER_JOB_ARGS" TO "SELECT_CATALOG_ROLE";
+--------------------------------------------------------
+--  DDL for View SCHEDULER_PROGRAM_ARGS
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "SYSTEM"."SCHEDULER_PROGRAM_ARGS" ("OWNER", "PROGRAM_NAME", "ARGUMENT_NAME", "ARGUMENT_POSITION", "ARGUMENT_TYPE", "METADATA_ATTRIBUTE", "DEFAULT_VALUE", "DEFAULT_ANYDATA_VALUE", "OUT_ARGUMENT") AS 
+  SELECT "OWNER","PROGRAM_NAME","ARGUMENT_NAME","ARGUMENT_POSITION","ARGUMENT_TYPE","METADATA_ATTRIBUTE","DEFAULT_VALUE","DEFAULT_ANYDATA_VALUE","OUT_ARGUMENT" FROM sys.all_scheduler_program_args
+;
+  GRANT SELECT ON "SYSTEM"."SCHEDULER_PROGRAM_ARGS" TO "SELECT_CATALOG_ROLE";
+REM INSERTING into C##EXAMEN.AUTH_GROUP
+SET DEFINE OFF;
+REM INSERTING into C##EXAMEN.AUTH_GROUP_PERMISSIONS
+SET DEFINE OFF;
+REM INSERTING into C##EXAMEN.AUTH_PERMISSION
+SET DEFINE OFF;
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('1','Can add log entry','1','add_logentry');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('2','Can change log entry','1','change_logentry');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('3','Can delete log entry','1','delete_logentry');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('4','Can view log entry','1','view_logentry');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('5','Can add permission','2','add_permission');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('6','Can change permission','2','change_permission');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('7','Can delete permission','2','delete_permission');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('8','Can view permission','2','view_permission');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('9','Can add group','3','add_group');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('10','Can change group','3','change_group');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('11','Can delete group','3','delete_group');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('12','Can view group','3','view_group');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('13','Can add user','4','add_user');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('14','Can change user','4','change_user');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('15','Can delete user','4','delete_user');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('16','Can view user','4','view_user');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('17','Can add content type','5','add_contenttype');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('18','Can change content type','5','change_contenttype');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('19','Can delete content type','5','delete_contenttype');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('20','Can view content type','5','view_contenttype');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('21','Can add session','6','add_session');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('22','Can change session','6','change_session');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('23','Can delete session','6','delete_session');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('24','Can view session','6','view_session');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('25','Can add servicio','7','add_servicio');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('26','Can change servicio','7','change_servicio');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('27','Can delete servicio','7','delete_servicio');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('28','Can view servicio','7','view_servicio');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('29','Can add categoria','8','add_categoria');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('30','Can change categoria','8','change_categoria');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('31','Can delete categoria','8','delete_categoria');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('32','Can view categoria','8','view_categoria');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('33','Can add post','9','add_post');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('34','Can change post','9','change_post');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('35','Can delete post','9','delete_post');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('36','Can view post','9','view_post');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('37','Can add categoriaProd','10','add_categoriaprod');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('38','Can change categoriaProd','10','change_categoriaprod');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('39','Can delete categoriaProd','10','delete_categoriaprod');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('40','Can view categoriaProd','10','view_categoriaprod');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('41','Can add Producto','11','add_producto');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('42','Can change Producto','11','change_producto');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('43','Can delete Producto','11','delete_producto');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('44','Can view Producto','11','view_producto');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('45','Can add genero','12','add_genero');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('46','Can change genero','12','change_genero');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('47','Can delete genero','12','delete_genero');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('48','Can view genero','12','view_genero');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('49','Can add cliente','13','add_cliente');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('50','Can change cliente','13','change_cliente');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('51','Can delete cliente','13','delete_cliente');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('52','Can view cliente','13','view_cliente');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('53','Can add pedido','14','add_pedido');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('54','Can change pedido','14','change_pedido');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('55','Can delete pedido','14','delete_pedido');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('56','Can view pedido','14','view_pedido');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('57','Can add Línea Pedido','15','add_lineapedido');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('58','Can change Línea Pedido','15','change_lineapedido');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('59','Can delete Línea Pedido','15','delete_lineapedido');
+Insert into C##EXAMEN.AUTH_PERMISSION (ID,NAME,CONTENT_TYPE_ID,CODENAME) values ('60','Can view Línea Pedido','15','view_lineapedido');
+REM INSERTING into C##EXAMEN.AUTH_USER
+SET DEFINE OFF;
+Insert into C##EXAMEN.AUTH_USER (ID,PASSWORD,LAST_LOGIN,IS_SUPERUSER,USERNAME,FIRST_NAME,LAST_NAME,EMAIL,IS_STAFF,IS_ACTIVE,DATE_JOINED) values ('2','pbkdf2_sha256$320000$aXdvLHLGpT2tUvuJWyPLDM$aaZhfpaMS+/q/QT2j0O7yDQFjL9gHa22O5nurA8hwDk=',null,'0','Aly',null,null,null,'0','1',to_timestamp('14/07/22 23:15:20,052114000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.AUTH_USER (ID,PASSWORD,LAST_LOGIN,IS_SUPERUSER,USERNAME,FIRST_NAME,LAST_NAME,EMAIL,IS_STAFF,IS_ACTIVE,DATE_JOINED) values ('3','pbkdf2_sha256$320000$z3bjuPKGRdpSHNoa4uT3EF$q6pFABQ1VoomzUQ/0btE+AOqkuysmZjreDEmiORVLCY=',to_timestamp('14/07/22 23:27:52,909606000','DD/MM/RR HH24:MI:SSXFF'),'0','Alison',null,null,null,'0','1',to_timestamp('14/07/22 23:27:52,426854000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.AUTH_USER (ID,PASSWORD,LAST_LOGIN,IS_SUPERUSER,USERNAME,FIRST_NAME,LAST_NAME,EMAIL,IS_STAFF,IS_ACTIVE,DATE_JOINED) values ('1','pbkdf2_sha256$320000$vxROQlMVdPZCXm3j8H3MYj$OQWmmG7RyuU9wA6Zlo5ZVwkSef2/boW0Z5N301Oa0R4=',to_timestamp('14/07/22 23:29:51,493663000','DD/MM/RR HH24:MI:SSXFF'),'1','admin',null,null,'ali.urrea@duocuc.cl','1','1',to_timestamp('14/07/22 23:12:40,055958000','DD/MM/RR HH24:MI:SSXFF'));
+REM INSERTING into C##EXAMEN.AUTH_USER_GROUPS
+SET DEFINE OFF;
+REM INSERTING into C##EXAMEN.AUTH_USER_USER_PERMISSIONS
+SET DEFINE OFF;
+REM INSERTING into C##EXAMEN.BLOG_CATEGORIA
+SET DEFINE OFF;
+Insert into C##EXAMEN.BLOG_CATEGORIA (ID,NOMBRE,CREATED,UPDATED) values ('1','General',to_timestamp('14/07/22 23:13:23,290812000','DD/MM/RR HH24:MI:SSXFF'),to_timestamp('14/07/22 23:13:23,290812000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.BLOG_CATEGORIA (ID,NOMBRE,CREATED,UPDATED) values ('2','Gatos',to_timestamp('14/07/22 23:13:28,719033000','DD/MM/RR HH24:MI:SSXFF'),to_timestamp('14/07/22 23:13:28,719033000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.BLOG_CATEGORIA (ID,NOMBRE,CREATED,UPDATED) values ('3','Perros',to_timestamp('14/07/22 23:13:32,815898000','DD/MM/RR HH24:MI:SSXFF'),to_timestamp('14/07/22 23:13:32,815898000','DD/MM/RR HH24:MI:SSXFF'));
+REM INSERTING into C##EXAMEN.BLOG_POST
+SET DEFINE OFF;
+Insert into C##EXAMEN.BLOG_POST (ID,TITULO,CONTENIDO,IMAGEN,CREATED,UPDATED,AUTOR_ID) values ('1','!SUPER EVENTOS!','!EVENTOS Y ACTIVIDADES PARA COMPATIR CON TU MASCOTA ESTE FIN DE SEMANA!','blog/eventos.jpg',to_timestamp('14/07/22 23:15:29,225290000','DD/MM/RR HH24:MI:SSXFF'),to_timestamp('14/07/22 23:15:29,225290000','DD/MM/RR HH24:MI:SSXFF'),'2');
+Insert into C##EXAMEN.BLOG_POST (ID,TITULO,CONTENIDO,IMAGEN,CREATED,UPDATED,AUTOR_ID) values ('2','¿Por qué babean los gatos?','Por una acumulación de saliva mientras ronronea o amasan y porque se encuentran relajados','blog/gato.jpg',to_timestamp('14/07/22 23:16:24,060915000','DD/MM/RR HH24:MI:SSXFF'),to_timestamp('14/07/22 23:16:24,060915000','DD/MM/RR HH24:MI:SSXFF'),'2');
+Insert into C##EXAMEN.BLOG_POST (ID,TITULO,CONTENIDO,IMAGEN,CREATED,UPDATED,AUTOR_ID) values ('3','Sabueso de Transilvania','Es un excelente perro de caza, ágil y poderoso','blog/sabueso.jpg',to_timestamp('14/07/22 23:17:13,122419000','DD/MM/RR HH24:MI:SSXFF'),to_timestamp('14/07/22 23:17:13,122419000','DD/MM/RR HH24:MI:SSXFF'),'2');
+REM INSERTING into C##EXAMEN.BLOG_POST_CATEGORIAS
+SET DEFINE OFF;
+Insert into C##EXAMEN.BLOG_POST_CATEGORIAS (ID,POST_ID,CATEGORIA_ID) values ('1','1','1');
+Insert into C##EXAMEN.BLOG_POST_CATEGORIAS (ID,POST_ID,CATEGORIA_ID) values ('2','2','2');
+Insert into C##EXAMEN.BLOG_POST_CATEGORIAS (ID,POST_ID,CATEGORIA_ID) values ('3','3','3');
+REM INSERTING into C##EXAMEN.DJANGO_ADMIN_LOG
+SET DEFINE OFF;
+Insert into C##EXAMEN.DJANGO_ADMIN_LOG (ID,ACTION_TIME,OBJECT_REPR,ACTION_FLAG,CONTENT_TYPE_ID,USER_ID) values ('4',to_timestamp('14/07/22 23:15:20,374050000','DD/MM/RR HH24:MI:SSXFF'),'Aly','1','4','1');
+Insert into C##EXAMEN.DJANGO_ADMIN_LOG (ID,ACTION_TIME,OBJECT_REPR,ACTION_FLAG,CONTENT_TYPE_ID,USER_ID) values ('5',to_timestamp('14/07/22 23:15:29,431334000','DD/MM/RR HH24:MI:SSXFF'),'!SUPER EVENTOS!','1','9','1');
+Insert into C##EXAMEN.DJANGO_ADMIN_LOG (ID,ACTION_TIME,OBJECT_REPR,ACTION_FLAG,CONTENT_TYPE_ID,USER_ID) values ('6',to_timestamp('14/07/22 23:16:24,096323000','DD/MM/RR HH24:MI:SSXFF'),'¿Por qué babean los gatos?','1','9','1');
+Insert into C##EXAMEN.DJANGO_ADMIN_LOG (ID,ACTION_TIME,OBJECT_REPR,ACTION_FLAG,CONTENT_TYPE_ID,USER_ID) values ('7',to_timestamp('14/07/22 23:17:13,141424000','DD/MM/RR HH24:MI:SSXFF'),'Sabueso de Transilvania','1','9','1');
+Insert into C##EXAMEN.DJANGO_ADMIN_LOG (ID,ACTION_TIME,OBJECT_REPR,ACTION_FLAG,CONTENT_TYPE_ID,USER_ID) values ('8',to_timestamp('14/07/22 23:18:02,947881000','DD/MM/RR HH24:MI:SSXFF'),'Peluquería','1','7','1');
+Insert into C##EXAMEN.DJANGO_ADMIN_LOG (ID,ACTION_TIME,OBJECT_REPR,ACTION_FLAG,CONTENT_TYPE_ID,USER_ID) values ('9',to_timestamp('14/07/22 23:18:45,068702000','DD/MM/RR HH24:MI:SSXFF'),'Farmaci','1','7','1');
+Insert into C##EXAMEN.DJANGO_ADMIN_LOG (ID,ACTION_TIME,OBJECT_REPR,ACTION_FLAG,CONTENT_TYPE_ID,USER_ID) values ('10',to_timestamp('14/07/22 23:19:20,039503000','DD/MM/RR HH24:MI:SSXFF'),'Veterinario','1','7','1');
+Insert into C##EXAMEN.DJANGO_ADMIN_LOG (ID,ACTION_TIME,OBJECT_REPR,ACTION_FLAG,CONTENT_TYPE_ID,USER_ID) values ('11',to_timestamp('14/07/22 23:19:26,651383000','DD/MM/RR HH24:MI:SSXFF'),'Farmacia','2','7','1');
+Insert into C##EXAMEN.DJANGO_ADMIN_LOG (ID,ACTION_TIME,OBJECT_REPR,ACTION_FLAG,CONTENT_TYPE_ID,USER_ID) values ('12',to_timestamp('14/07/22 23:19:44,659305000','DD/MM/RR HH24:MI:SSXFF'),'Ropa','1','10','1');
+Insert into C##EXAMEN.DJANGO_ADMIN_LOG (ID,ACTION_TIME,OBJECT_REPR,ACTION_FLAG,CONTENT_TYPE_ID,USER_ID) values ('13',to_timestamp('14/07/22 23:19:49,205963000','DD/MM/RR HH24:MI:SSXFF'),'Juguetes','1','10','1');
+Insert into C##EXAMEN.DJANGO_ADMIN_LOG (ID,ACTION_TIME,OBJECT_REPR,ACTION_FLAG,CONTENT_TYPE_ID,USER_ID) values ('14',to_timestamp('14/07/22 23:19:52,403981000','DD/MM/RR HH24:MI:SSXFF'),'Alimentos','1','10','1');
+Insert into C##EXAMEN.DJANGO_ADMIN_LOG (ID,ACTION_TIME,OBJECT_REPR,ACTION_FLAG,CONTENT_TYPE_ID,USER_ID) values ('15',to_timestamp('14/07/22 23:20:14,425644000','DD/MM/RR HH24:MI:SSXFF'),'Hombre','1','12','1');
+Insert into C##EXAMEN.DJANGO_ADMIN_LOG (ID,ACTION_TIME,OBJECT_REPR,ACTION_FLAG,CONTENT_TYPE_ID,USER_ID) values ('16',to_timestamp('14/07/22 23:20:19,519580000','DD/MM/RR HH24:MI:SSXFF'),'Mujer','1','12','1');
+Insert into C##EXAMEN.DJANGO_ADMIN_LOG (ID,ACTION_TIME,OBJECT_REPR,ACTION_FLAG,CONTENT_TYPE_ID,USER_ID) values ('17',to_timestamp('14/07/22 23:21:04,327258000','DD/MM/RR HH24:MI:SSXFF'),'Producto object (1)','1','11','1');
+Insert into C##EXAMEN.DJANGO_ADMIN_LOG (ID,ACTION_TIME,OBJECT_REPR,ACTION_FLAG,CONTENT_TYPE_ID,USER_ID) values ('18',to_timestamp('14/07/22 23:22:03,061584000','DD/MM/RR HH24:MI:SSXFF'),'Producto object (2)','1','11','1');
+Insert into C##EXAMEN.DJANGO_ADMIN_LOG (ID,ACTION_TIME,OBJECT_REPR,ACTION_FLAG,CONTENT_TYPE_ID,USER_ID) values ('19',to_timestamp('14/07/22 23:22:39,089206000','DD/MM/RR HH24:MI:SSXFF'),'Producto object (3)','1','11','1');
+Insert into C##EXAMEN.DJANGO_ADMIN_LOG (ID,ACTION_TIME,OBJECT_REPR,ACTION_FLAG,CONTENT_TYPE_ID,USER_ID) values ('20',to_timestamp('14/07/22 23:23:11,338683000','DD/MM/RR HH24:MI:SSXFF'),'Producto object (4)','1','11','1');
+Insert into C##EXAMEN.DJANGO_ADMIN_LOG (ID,ACTION_TIME,OBJECT_REPR,ACTION_FLAG,CONTENT_TYPE_ID,USER_ID) values ('21',to_timestamp('14/07/22 23:23:45,655360000','DD/MM/RR HH24:MI:SSXFF'),'Producto object (5)','1','11','1');
+Insert into C##EXAMEN.DJANGO_ADMIN_LOG (ID,ACTION_TIME,OBJECT_REPR,ACTION_FLAG,CONTENT_TYPE_ID,USER_ID) values ('22',to_timestamp('14/07/22 23:24:15,945694000','DD/MM/RR HH24:MI:SSXFF'),'Producto object (6)','1','11','1');
+Insert into C##EXAMEN.DJANGO_ADMIN_LOG (ID,ACTION_TIME,OBJECT_REPR,ACTION_FLAG,CONTENT_TYPE_ID,USER_ID) values ('23',to_timestamp('14/07/22 23:24:49,369904000','DD/MM/RR HH24:MI:SSXFF'),'Producto object (7)','1','11','1');
+Insert into C##EXAMEN.DJANGO_ADMIN_LOG (ID,ACTION_TIME,OBJECT_REPR,ACTION_FLAG,CONTENT_TYPE_ID,USER_ID) values ('1',to_timestamp('14/07/22 23:13:23,320057000','DD/MM/RR HH24:MI:SSXFF'),'General','1','8','1');
+Insert into C##EXAMEN.DJANGO_ADMIN_LOG (ID,ACTION_TIME,OBJECT_REPR,ACTION_FLAG,CONTENT_TYPE_ID,USER_ID) values ('2',to_timestamp('14/07/22 23:13:28,721032000','DD/MM/RR HH24:MI:SSXFF'),'Gatos','1','8','1');
+Insert into C##EXAMEN.DJANGO_ADMIN_LOG (ID,ACTION_TIME,OBJECT_REPR,ACTION_FLAG,CONTENT_TYPE_ID,USER_ID) values ('3',to_timestamp('14/07/22 23:13:32,818890000','DD/MM/RR HH24:MI:SSXFF'),'Perros','1','8','1');
+REM INSERTING into C##EXAMEN.DJANGO_CONTENT_TYPE
+SET DEFINE OFF;
+Insert into C##EXAMEN.DJANGO_CONTENT_TYPE (ID,APP_LABEL,MODEL) values ('1','admin','logentry');
+Insert into C##EXAMEN.DJANGO_CONTENT_TYPE (ID,APP_LABEL,MODEL) values ('2','auth','permission');
+Insert into C##EXAMEN.DJANGO_CONTENT_TYPE (ID,APP_LABEL,MODEL) values ('3','auth','group');
+Insert into C##EXAMEN.DJANGO_CONTENT_TYPE (ID,APP_LABEL,MODEL) values ('4','auth','user');
+Insert into C##EXAMEN.DJANGO_CONTENT_TYPE (ID,APP_LABEL,MODEL) values ('5','contenttypes','contenttype');
+Insert into C##EXAMEN.DJANGO_CONTENT_TYPE (ID,APP_LABEL,MODEL) values ('6','sessions','session');
+Insert into C##EXAMEN.DJANGO_CONTENT_TYPE (ID,APP_LABEL,MODEL) values ('7','servicios','servicio');
+Insert into C##EXAMEN.DJANGO_CONTENT_TYPE (ID,APP_LABEL,MODEL) values ('8','blog','categoria');
+Insert into C##EXAMEN.DJANGO_CONTENT_TYPE (ID,APP_LABEL,MODEL) values ('9','blog','post');
+Insert into C##EXAMEN.DJANGO_CONTENT_TYPE (ID,APP_LABEL,MODEL) values ('10','tienda','categoriaprod');
+Insert into C##EXAMEN.DJANGO_CONTENT_TYPE (ID,APP_LABEL,MODEL) values ('11','tienda','producto');
+Insert into C##EXAMEN.DJANGO_CONTENT_TYPE (ID,APP_LABEL,MODEL) values ('12','tienda','genero');
+Insert into C##EXAMEN.DJANGO_CONTENT_TYPE (ID,APP_LABEL,MODEL) values ('13','tienda','cliente');
+Insert into C##EXAMEN.DJANGO_CONTENT_TYPE (ID,APP_LABEL,MODEL) values ('14','pedidos','pedido');
+Insert into C##EXAMEN.DJANGO_CONTENT_TYPE (ID,APP_LABEL,MODEL) values ('15','pedidos','lineapedido');
+REM INSERTING into C##EXAMEN.DJANGO_MIGRATIONS
+SET DEFINE OFF;
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('1','ProyectoWebApp','0001_initial',to_timestamp('14/07/22 23:08:20,626303000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('2','ProyectoWebApp','0002_delete_cliente_delete_genero',to_timestamp('14/07/22 23:08:20,913859000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('3','contenttypes','0001_initial',to_timestamp('14/07/22 23:08:21,036747000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('4','auth','0001_initial',to_timestamp('14/07/22 23:08:21,561947000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('5','admin','0001_initial',to_timestamp('14/07/22 23:08:21,738414000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('6','admin','0002_logentry_remove_auto_add',to_timestamp('14/07/22 23:08:21,800769000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('7','admin','0003_logentry_add_action_flag_choices',to_timestamp('14/07/22 23:08:21,873775000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('8','contenttypes','0002_remove_content_type_name',to_timestamp('14/07/22 23:08:22,081879000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('9','auth','0002_alter_permission_name_max_length',to_timestamp('14/07/22 23:08:22,179890000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('10','auth','0003_alter_user_email_max_length',to_timestamp('14/07/22 23:08:22,292895000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('11','auth','0004_alter_user_username_opts',to_timestamp('14/07/22 23:08:22,367904000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('12','auth','0005_alter_user_last_login_null',to_timestamp('14/07/22 23:08:22,467204000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('13','auth','0006_require_contenttypes_0002',to_timestamp('14/07/22 23:08:22,512211000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('14','auth','0007_alter_validators_add_error_messages',to_timestamp('14/07/22 23:08:22,602222000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('15','auth','0008_alter_user_username_max_length',to_timestamp('14/07/22 23:08:22,691221000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('16','auth','0009_alter_user_last_name_max_length',to_timestamp('14/07/22 23:08:22,765225000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('17','auth','0010_alter_group_name_max_length',to_timestamp('14/07/22 23:08:22,844106000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('18','auth','0011_update_proxy_permissions',to_timestamp('14/07/22 23:08:22,908123000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('19','auth','0012_alter_user_first_name_max_length',to_timestamp('14/07/22 23:08:22,984111000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('20','blog','0001_initial',to_timestamp('14/07/22 23:08:23,243115000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('21','blog','0002_alter_post_contenido',to_timestamp('14/07/22 23:08:23,329201000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('22','tienda','0001_initial',to_timestamp('14/07/22 23:08:23,484370000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('23','tienda','0002_producto_created_producto_updated',to_timestamp('14/07/22 23:08:23,621548000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('24','pedidos','0001_initial',to_timestamp('14/07/22 23:08:23,886412000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('25','pedidos','0002_rename_pedido_id_lineapedido_pedido_and_more',to_timestamp('14/07/22 23:08:26,068402000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('26','servicios','0001_initial',to_timestamp('14/07/22 23:08:26,165846000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('27','servicios','0002_alter_servicio_imagen',to_timestamp('14/07/22 23:08:26,219852000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('28','sessions','0001_initial',to_timestamp('14/07/22 23:08:26,322843000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.DJANGO_MIGRATIONS (ID,APP,NAME,APPLIED) values ('29','tienda','0003_genero_cliente',to_timestamp('14/07/22 23:08:26,466466000','DD/MM/RR HH24:MI:SSXFF'));
+REM INSERTING into C##EXAMEN.DJANGO_SESSION
+SET DEFINE OFF;
+Insert into C##EXAMEN.DJANGO_SESSION (SESSION_KEY,EXPIRE_DATE) values ('0wfdjyqsqe6sub3jf9ypm7faioglplhr',to_timestamp('28/07/22 23:32:45,397420000','DD/MM/RR HH24:MI:SSXFF'));
+REM INSERTING into C##EXAMEN.LINEAPEDIDOS
+SET DEFINE OFF;
+Insert into C##EXAMEN.LINEAPEDIDOS (ID,CANTIDAD,CREATED_AT,PEDIDO_ID,PRODUCTO_ID,USER_ID) values ('1','1',to_timestamp('14/07/22 23:28:56,521457000','DD/MM/RR HH24:MI:SSXFF'),'1','1','3');
+Insert into C##EXAMEN.LINEAPEDIDOS (ID,CANTIDAD,CREATED_AT,PEDIDO_ID,PRODUCTO_ID,USER_ID) values ('2','1',to_timestamp('14/07/22 23:28:56,521457000','DD/MM/RR HH24:MI:SSXFF'),'1','2','3');
+REM INSERTING into C##EXAMEN.PEDIDOS
+SET DEFINE OFF;
+Insert into C##EXAMEN.PEDIDOS (ID,CREATED_AT,USER_ID) values ('1',to_timestamp('14/07/22 23:28:56,475879000','DD/MM/RR HH24:MI:SSXFF'),'3');
+Insert into C##EXAMEN.PEDIDOS (ID,CREATED_AT,USER_ID) values ('2',to_timestamp('14/07/22 23:30:56,271033000','DD/MM/RR HH24:MI:SSXFF'),'1');
+REM INSERTING into C##EXAMEN.SERVICIOS_SERVICIO
+SET DEFINE OFF;
+Insert into C##EXAMEN.SERVICIOS_SERVICIO (ID,TITULO,CONTENIDO,IMAGEN,CREATED,UPDATED) values ('1','Peluquería','Atención 100% personalizada y comprometida','servicios/peluqueria.jpg',to_timestamp('14/07/22 23:18:02,918350000','DD/MM/RR HH24:MI:SSXFF'),to_timestamp('14/07/22 23:18:02,918350000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.SERVICIOS_SERVICIO (ID,TITULO,CONTENIDO,IMAGEN,CREATED,UPDATED) values ('2','Farmacia','Los mejores productos para tu mascota','servicios/farmacia.png',to_timestamp('14/07/22 23:18:45,066702000','DD/MM/RR HH24:MI:SSXFF'),to_timestamp('14/07/22 23:18:45,066702000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.SERVICIOS_SERVICIO (ID,TITULO,CONTENIDO,IMAGEN,CREATED,UPDATED) values ('3','Veterinario','Para todo tipo de animales','servicios/veterinaria.png',to_timestamp('14/07/22 23:19:20,037481000','DD/MM/RR HH24:MI:SSXFF'),to_timestamp('14/07/22 23:19:20,037481000','DD/MM/RR HH24:MI:SSXFF'));
+REM INSERTING into C##EXAMEN.TIENDA_CATEGORIAPROD
+SET DEFINE OFF;
+Insert into C##EXAMEN.TIENDA_CATEGORIAPROD (ID,NOMBRE,CREATED,UPDATED) values ('1','Ropa',to_timestamp('14/07/22 23:19:44,639117000','DD/MM/RR HH24:MI:SSXFF'),to_timestamp('14/07/22 23:19:44,639117000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.TIENDA_CATEGORIAPROD (ID,NOMBRE,CREATED,UPDATED) values ('2','Juguetes',to_timestamp('14/07/22 23:19:49,202960000','DD/MM/RR HH24:MI:SSXFF'),to_timestamp('14/07/22 23:19:49,202960000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.TIENDA_CATEGORIAPROD (ID,NOMBRE,CREATED,UPDATED) values ('3','Alimentos',to_timestamp('14/07/22 23:19:52,398981000','DD/MM/RR HH24:MI:SSXFF'),to_timestamp('14/07/22 23:19:52,398981000','DD/MM/RR HH24:MI:SSXFF'));
+REM INSERTING into C##EXAMEN.TIENDA_CLIENTE
+SET DEFINE OFF;
+Insert into C##EXAMEN.TIENDA_CLIENTE (RUT,NOMBRE,CORREO,TELEFONO,DIRECCION,GENERO_ID) values ('16.874.984-2','Alison','alisonantoniauh@gmail.com','987673662','Padre Hurtado','2');
+REM INSERTING into C##EXAMEN.TIENDA_GENERO
+SET DEFINE OFF;
+Insert into C##EXAMEN.TIENDA_GENERO (IDGENERO,NOMBREGENERO) values ('1','Hombre');
+Insert into C##EXAMEN.TIENDA_GENERO (IDGENERO,NOMBREGENERO) values ('2','Mujer');
+REM INSERTING into C##EXAMEN.TIENDA_PRODUCTO
+SET DEFINE OFF;
+Insert into C##EXAMEN.TIENDA_PRODUCTO (ID,NOMBRE,IMAGEN,PRECIO,DISPONIBILIDAD,CATEGORIAS_ID,CREATED,UPDATED) values ('1','Pelota de nudo','tienda/pelota.jpg','5000','1','2',to_timestamp('14/07/22 23:21:04,291256000','DD/MM/RR HH24:MI:SSXFF'),to_timestamp('14/07/22 23:21:04,291256000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.TIENDA_PRODUCTO (ID,NOMBRE,IMAGEN,PRECIO,DISPONIBILIDAD,CATEGORIAS_ID,CREATED,UPDATED) values ('2','MasterCat','tienda/mastercat.jpg','1500','1','3',to_timestamp('14/07/22 23:22:03,058582000','DD/MM/RR HH24:MI:SSXFF'),to_timestamp('14/07/22 23:22:03,058582000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.TIENDA_PRODUCTO (ID,NOMBRE,IMAGEN,PRECIO,DISPONIBILIDAD,CATEGORIAS_ID,CREATED,UPDATED) values ('3','Dogshow','tienda/dogshow.jpg','5000','1','3',to_timestamp('14/07/22 23:22:39,087203000','DD/MM/RR HH24:MI:SSXFF'),to_timestamp('14/07/22 23:22:39,087203000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.TIENDA_PRODUCTO (ID,NOMBRE,IMAGEN,PRECIO,DISPONIBILIDAD,CATEGORIAS_ID,CREATED,UPDATED) values ('4','Vestido de huaso','tienda/huaso.jfif','15000','1','1',to_timestamp('14/07/22 23:23:11,330683000','DD/MM/RR HH24:MI:SSXFF'),to_timestamp('14/07/22 23:23:11,330683000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.TIENDA_PRODUCTO (ID,NOMBRE,IMAGEN,PRECIO,DISPONIBILIDAD,CATEGORIAS_ID,CREATED,UPDATED) values ('5','Pelota','tienda/pelotaperro.jpg','2000','1','2',to_timestamp('14/07/22 23:23:45,651357000','DD/MM/RR HH24:MI:SSXFF'),to_timestamp('14/07/22 23:23:45,651357000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.TIENDA_PRODUCTO (ID,NOMBRE,IMAGEN,PRECIO,DISPONIBILIDAD,CATEGORIAS_ID,CREATED,UPDATED) values ('6','Plato','tienda/plato.jpg','4000','1','2',to_timestamp('14/07/22 23:24:15,942693000','DD/MM/RR HH24:MI:SSXFF'),to_timestamp('14/07/22 23:24:15,942693000','DD/MM/RR HH24:MI:SSXFF'));
+Insert into C##EXAMEN.TIENDA_PRODUCTO (ID,NOMBRE,IMAGEN,PRECIO,DISPONIBILIDAD,CATEGORIAS_ID,CREATED,UPDATED) values ('7','Arnés','tienda/arnes.jpg','6000','1','1',to_timestamp('14/07/22 23:24:49,362908000','DD/MM/RR HH24:MI:SSXFF'),to_timestamp('14/07/22 23:24:49,363904000','DD/MM/RR HH24:MI:SSXFF'));
+--------------------------------------------------------
+--  DDL for Index SYS_C008459
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."SYS_C008459" ON "C##EXAMEN"."AUTH_GROUP" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008460
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."SYS_C008460" ON "C##EXAMEN"."AUTH_GROUP" ("NAME") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008464
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."SYS_C008464" ON "C##EXAMEN"."AUTH_GROUP_PERMISSIONS" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index AUTH_GROU_GROUP_ID__0CD325B0_U
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."AUTH_GROU_GROUP_ID__0CD325B0_U" ON "C##EXAMEN"."AUTH_GROUP_PERMISSIONS" ("GROUP_ID", "PERMISSION_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index AUTH_GROUP_GROUP_ID_B120CBF9
+--------------------------------------------------------
+
+  CREATE INDEX "C##EXAMEN"."AUTH_GROUP_GROUP_ID_B120CBF9" ON "C##EXAMEN"."AUTH_GROUP_PERMISSIONS" ("GROUP_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index AUTH_GROUP_PERMISSION_84C5C92E
+--------------------------------------------------------
+
+  CREATE INDEX "C##EXAMEN"."AUTH_GROUP_PERMISSION_84C5C92E" ON "C##EXAMEN"."AUTH_GROUP_PERMISSIONS" ("PERMISSION_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008457
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."SYS_C008457" ON "C##EXAMEN"."AUTH_PERMISSION" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index AUTH_PERM_CONTENT_T_01AB375A_U
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."AUTH_PERM_CONTENT_T_01AB375A_U" ON "C##EXAMEN"."AUTH_PERMISSION" ("CONTENT_TYPE_ID", "CODENAME") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index AUTH_PERMI_CONTENT_TY_2F476E4B
+--------------------------------------------------------
+
+  CREATE INDEX "C##EXAMEN"."AUTH_PERMI_CONTENT_TY_2F476E4B" ON "C##EXAMEN"."AUTH_PERMISSION" ("CONTENT_TYPE_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008474
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."SYS_C008474" ON "C##EXAMEN"."AUTH_USER" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008475
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."SYS_C008475" ON "C##EXAMEN"."AUTH_USER" ("USERNAME") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008479
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."SYS_C008479" ON "C##EXAMEN"."AUTH_USER_GROUPS" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index AUTH_USER_USER_ID_G_94350C0C_U
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."AUTH_USER_USER_ID_G_94350C0C_U" ON "C##EXAMEN"."AUTH_USER_GROUPS" ("USER_ID", "GROUP_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index AUTH_USER__USER_ID_6A12ED8B
+--------------------------------------------------------
+
+  CREATE INDEX "C##EXAMEN"."AUTH_USER__USER_ID_6A12ED8B" ON "C##EXAMEN"."AUTH_USER_GROUPS" ("USER_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index AUTH_USER__GROUP_ID_97559544
+--------------------------------------------------------
+
+  CREATE INDEX "C##EXAMEN"."AUTH_USER__GROUP_ID_97559544" ON "C##EXAMEN"."AUTH_USER_GROUPS" ("GROUP_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008483
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."SYS_C008483" ON "C##EXAMEN"."AUTH_USER_USER_PERMISSIONS" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index AUTH_USER_USER_ID_P_14A6B632_U
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."AUTH_USER_USER_ID_P_14A6B632_U" ON "C##EXAMEN"."AUTH_USER_USER_PERMISSIONS" ("USER_ID", "PERMISSION_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index AUTH_USER__USER_ID_A95EAD1B
+--------------------------------------------------------
+
+  CREATE INDEX "C##EXAMEN"."AUTH_USER__USER_ID_A95EAD1B" ON "C##EXAMEN"."AUTH_USER_USER_PERMISSIONS" ("USER_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index AUTH_USER__PERMISSION_1FBB5F2C
+--------------------------------------------------------
+
+  CREATE INDEX "C##EXAMEN"."AUTH_USER__PERMISSION_1FBB5F2C" ON "C##EXAMEN"."AUTH_USER_USER_PERMISSIONS" ("PERMISSION_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008506
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."SYS_C008506" ON "C##EXAMEN"."BLOG_CATEGORIA" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008511
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."SYS_C008511" ON "C##EXAMEN"."BLOG_POST" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index BLOG_POST_AUTOR_ID_8811EA21
+--------------------------------------------------------
+
+  CREATE INDEX "C##EXAMEN"."BLOG_POST_AUTOR_ID_8811EA21" ON "C##EXAMEN"."BLOG_POST" ("AUTOR_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008515
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."SYS_C008515" ON "C##EXAMEN"."BLOG_POST_CATEGORIAS" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index BLOG_POST_POST_ID_C_70B54E48_U
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."BLOG_POST_POST_ID_C_70B54E48_U" ON "C##EXAMEN"."BLOG_POST_CATEGORIAS" ("POST_ID", "CATEGORIA_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index BLOG_POST__POST_ID_212BF44C
+--------------------------------------------------------
+
+  CREATE INDEX "C##EXAMEN"."BLOG_POST__POST_ID_212BF44C" ON "C##EXAMEN"."BLOG_POST_CATEGORIAS" ("POST_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index BLOG_POST__CATEGORIA__F3743C06
+--------------------------------------------------------
+
+  CREATE INDEX "C##EXAMEN"."BLOG_POST__CATEGORIA__F3743C06" ON "C##EXAMEN"."BLOG_POST_CATEGORIAS" ("CATEGORIA_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index DJANGO_ADM_CONTENT_TY_C4BCE8EB
+--------------------------------------------------------
+
+  CREATE INDEX "C##EXAMEN"."DJANGO_ADM_CONTENT_TY_C4BCE8EB" ON "C##EXAMEN"."DJANGO_ADMIN_LOG" ("CONTENT_TYPE_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index DJANGO_ADM_USER_ID_C564EBA6
+--------------------------------------------------------
+
+  CREATE INDEX "C##EXAMEN"."DJANGO_ADM_USER_ID_C564EBA6" ON "C##EXAMEN"."DJANGO_ADMIN_LOG" ("USER_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008500
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."SYS_C008500" ON "C##EXAMEN"."DJANGO_ADMIN_LOG" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008453
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."SYS_C008453" ON "C##EXAMEN"."DJANGO_CONTENT_TYPE" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index DJANGO_CO_APP_LABEL_76BD3D3B_U
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."DJANGO_CO_APP_LABEL_76BD3D3B_U" ON "C##EXAMEN"."DJANGO_CONTENT_TYPE" ("APP_LABEL", "MODEL") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008444
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."SYS_C008444" ON "C##EXAMEN"."DJANGO_MIGRATIONS" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008556
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."SYS_C008556" ON "C##EXAMEN"."DJANGO_SESSION" ("SESSION_KEY") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index DJANGO_SES_EXPIRE_DAT_A5C62663
+--------------------------------------------------------
+
+  CREATE INDEX "C##EXAMEN"."DJANGO_SES_EXPIRE_DAT_A5C62663" ON "C##EXAMEN"."DJANGO_SESSION" ("EXPIRE_DATE") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008543
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."SYS_C008543" ON "C##EXAMEN"."LINEAPEDIDOS" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index LINEAPEDID_PEDIDO_ID__704E59AA
+--------------------------------------------------------
+
+  CREATE INDEX "C##EXAMEN"."LINEAPEDID_PEDIDO_ID__704E59AA" ON "C##EXAMEN"."LINEAPEDIDOS" ("PEDIDO_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index LINEAPEDID_PRODUCTO_I_384D0ABA
+--------------------------------------------------------
+
+  CREATE INDEX "C##EXAMEN"."LINEAPEDID_PRODUCTO_I_384D0ABA" ON "C##EXAMEN"."LINEAPEDIDOS" ("PRODUCTO_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index LINEAPEDIDOS_USER_ID_8BA34654
+--------------------------------------------------------
+
+  CREATE INDEX "C##EXAMEN"."LINEAPEDIDOS_USER_ID_8BA34654" ON "C##EXAMEN"."LINEAPEDIDOS" ("USER_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008536
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."SYS_C008536" ON "C##EXAMEN"."PEDIDOS" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index PEDIDOS_USER_ID_C7DB7FF2
+--------------------------------------------------------
+
+  CREATE INDEX "C##EXAMEN"."PEDIDOS_USER_ID_C7DB7FF2" ON "C##EXAMEN"."PEDIDOS" ("USER_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008553
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."SYS_C008553" ON "C##EXAMEN"."SERVICIOS_SERVICIO" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008523
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."SYS_C008523" ON "C##EXAMEN"."TIENDA_CATEGORIAPROD" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008562
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."SYS_C008562" ON "C##EXAMEN"."TIENDA_CLIENTE" ("RUT") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index TIENDA_CLI_GENERO_ID_8E4C97A1
+--------------------------------------------------------
+
+  CREATE INDEX "C##EXAMEN"."TIENDA_CLI_GENERO_ID_8E4C97A1" ON "C##EXAMEN"."TIENDA_CLIENTE" ("GENERO_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008558
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."SYS_C008558" ON "C##EXAMEN"."TIENDA_GENERO" ("IDGENERO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C008529
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##EXAMEN"."SYS_C008529" ON "C##EXAMEN"."TIENDA_PRODUCTO" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index TIENDA_PRO_CATEGORIAS_462AA648
+--------------------------------------------------------
+
+  CREATE INDEX "C##EXAMEN"."TIENDA_PRO_CATEGORIAS_462AA648" ON "C##EXAMEN"."TIENDA_PRODUCTO" ("CATEGORIAS_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Function LOGMNR$COL_GG_TABF_PUBLIC
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE FUNCTION "SYSTEM"."LOGMNR$COL_GG_TABF_PUBLIC" wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+237 185
+nkvJV1w6wH1y7mRApzf9mGuebNUwgxDILkhGfHQCmP8+Vi4fyqh3SG1Fyq+pCts1OlgnK761
+YuzKBA4JE5DNwZzBIF/Y4ZM5eUlquVyTkOg+AodK3vQJt9NLvPITXbP42O37gO+zKr4BQEJk
+ypwrP1U/Pf6MLZONN8LUaVqHCN87T14HqHs5taX7LhLXQ2lCVBE1Ll8dyB9CDOlbyvQS/lrb
++0n1pQi9IJAWySL85ChAqnTaqFJm0YeToD4lZ8UUPQqIZNoX0x73WK9OzsmdBrvEC97iduxe
+PEXVkxF6xklPod6yOGBvW7DAFMBgf+LajDLVKOAwB2EAiKCXYMuTUTtMYYkCFFf4sj1rCpsj
+TLth6TSru530aM2HP6bEbm3m
+
+/
+--------------------------------------------------------
+--  DDL for Function LOGMNR$GSBA_GG_TABF_PUBLIC
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE FUNCTION "SYSTEM"."LOGMNR$GSBA_GG_TABF_PUBLIC" wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+206 171
+6gxi/CQwK1I5Rfwuw/SXrOGpVRYwgwLI1yfbfHRGEjNe54OE4QwRZCoA20oG536tzgcBrj+1
+xE3tE8jIhAoTlUdUmkdYMmZycO1SdiJZwwt/6BrM1wHXl/E5+3Ip2NXzC9j8v4+KjkD9d5AT
+p05eEsEWjU1CBTMSpjZZrXzbgFl9QNnQ+zJGjSug21f76ajs78m6anxz7vFcTcem6XpAgKjc
+EXzd/ijP8qiOqwblTfnXcRslJn3MljD02u+5fh9NBctOmnaw/tOjRCFPUhY8I9gCoMptjG7U
+rHEIFzHOFyxBEdulRGq4ngSgcm7l2yOdSHgNM8rO2vUH4gozvJoLE1S8GBBzG/wrvHPhACQ/
+2w==
+
+/
+--------------------------------------------------------
+--  DDL for Function LOGMNR$KEY_GG_TABF_PUBLIC
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE FUNCTION "SYSTEM"."LOGMNR$KEY_GG_TABF_PUBLIC" wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+2a0 1a1
+3O4I5hDO715d8A2tqbxMCflFW0owg/D319xqfC9Grfg+K6yE71zMvtNS45AyRXBk77WpI5v4
+nUSfE2lbvUYgk3JHySIe28XxC3xIYYpPGQjxwa3GzPw0FN5aN6kerQQTHUBp29Dd+vLSgBaC
+2pAFrq059ZvN0ZPN11XG/2RuDY7HaTQu/QffhnY8rVlNxpFmbkVidwtZQahx5qIFu9Uww/tv
+o1AvhjaORi898/KiPtOqv7LpsPFbyNuMnZEG48cxtZuesMBJFP/bKtgU2DN69xiT8Pxf+N2n
+g0D2ximYzZqwY/4dBQj9dyQDuXRFo40hdqtWw0L96zV6723aQ8Xp0cqBaZj2wWTI4+6Ikry9
+zY0Mdm3bV8TYqsOa+zT4fnikGO0eYbTFHEiW9QUbl/UwzuERwk8p
+
+/
+--------------------------------------------------------
+--  DDL for Function LOGMNR$SEQ_GG_TABF_PUBLIC
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE FUNCTION "SYSTEM"."LOGMNR$SEQ_GG_TABF_PUBLIC" wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+249 181
+++dDv/cHZatK7/vHG9lvR8DQCpYwg/D3AEhqfHQC2h6ONoOvOeHvTNX1S5GDyajM4j8vkSVz
+IMw+LbYS3goujprvmrB/LUpdBF8TVvjEqZpC7MCKPXWcGnTeL7ja8C2tcOdjOpRXkwL5NmPJ
+B0KqMvwepdiQDY7HUDQrBddQC1lBqHGEogWkwRJ3+2+jUC+Gpo5GTazIWS0V551NkSl3+h0W
+BhkPglLbvQDPzxWTnmu4ZuJIlTiNwTf1R0WxghyyKFjES9CJsCrGT8Fn7prlF4Mr5kx1YBGf
+5xaODtRnmVJgb65RlKbAN9+Xxf2QnQjKQL99RZAgsEwGVKNfx9lFKwHLGUwzjOxmIAXXYd/Z
++L9osPQJjZYkNrD0pQ==
+
+/
+--------------------------------------------------------
+--  DDL for Function LOGMNR$TAB_GG_TABF_PUBLIC
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE FUNCTION "SYSTEM"."LOGMNR$TAB_GG_TABF_PUBLIC" wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+22e 181
+PRVt0FiLRPgjIhZlCZcQhnOHXQ4wgzJp2UhGfHSKrQ843hKm3gKD9swoFAS4jVcW0CsSl7W1
+6banVWdjktOVM18XyRjY4ZM5eRdquSp0ZdfHl3KJPBYqPi9LXIwum30Qh7ymgO+zTKj+R1N2
+nSs/TPnknfYLwcUdAfBryDQGEIMisMuE9XT5ix3sudhHa5tLJRjsBIDKlqL7zk2CH0C1NRAZ
+XrP7WgavVdNS3Yikz88VupZG21hTuAGspJBgCagmNWIwi9pgCIWP3rxF4p+uMps/ABEg+MBP
+6Iykm62kO6hWhVHJXkfKF/jrQFjYBTTzatr1VTcOXt/AFuagDR7isNtb//lnXh8TXyAFWyCT
+ubv6GXL0aM0PP/t+DfSl
+
+/
+--------------------------------------------------------
+--  DDL for Function LOGMNR$USER_GG_TABF_PUBLIC
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE FUNCTION "SYSTEM"."LOGMNR$USER_GG_TABF_PUBLIC" wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+272 191
+Vc+i+Mga8m7/BSlvXl0J+GmParYwg/D319wCfC8CTE6Ot30G8QRR0WzR8ohw8Z/y6DuL4pL5
+IDjZApnCaZgeKa1OTjLj2B2tOYZg2ZuOAPKrxo7DeBqtn0Ahw0tubS36jP4xc+d2eQebdJMD
+c/U0JxdiAl0qIPzsltBjeoGAEsxUk0aubCMJmysgc2d8ojil6ixQ37D7RA0HWMkh27QdOuXF
+vSwuufDunMMT8Hue9dvy4vRXj+PhuyylJSukStsxyIb234EahCXyrjDlnzbC91eoU7v5sb4D
+OvtDmggQCEViyhFXwspP9P0dOObin8JENsDJeFZYr/oVAgSHa97LRKvNZgd+f//XHlpEAOP4
+rNm5mF0wTCABbb7tc5c7uo09M+79i7en8g==
+
+/
+--------------------------------------------------------
+--  DDL for Synonymn CATALOG
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE SYNONYM "SYSTEM"."CATALOG" FOR "SYS"."CATALOG";
+--------------------------------------------------------
+--  DDL for Synonymn COL
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE SYNONYM "SYSTEM"."COL" FOR "SYS"."COL";
+--------------------------------------------------------
+--  DDL for Synonymn PRODUCT_USER_PROFILE
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE SYNONYM "SYSTEM"."PRODUCT_USER_PROFILE" FOR "SYSTEM"."SQLPLUS_PRODUCT_PROFILE";
+--------------------------------------------------------
+--  DDL for Synonymn PUBLICSYN
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE SYNONYM "SYSTEM"."PUBLICSYN" FOR "SYS"."PUBLICSYN";
+--------------------------------------------------------
+--  DDL for Synonymn SYSCATALOG
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE SYNONYM "SYSTEM"."SYSCATALOG" FOR "SYS"."SYSCATALOG";
+--------------------------------------------------------
+--  DDL for Synonymn SYSFILES
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE SYNONYM "SYSTEM"."SYSFILES" FOR "SYS"."SYSFILES";
+--------------------------------------------------------
+--  DDL for Synonymn TAB
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE SYNONYM "SYSTEM"."TAB" FOR "SYS"."TAB";
+--------------------------------------------------------
+--  DDL for Synonymn TABQUOTAS
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE SYNONYM "SYSTEM"."TABQUOTAS" FOR "SYS"."TABQUOTAS";
+--------------------------------------------------------
+--  Constraints for Table AUTH_GROUP
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."AUTH_GROUP" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."AUTH_GROUP" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "C##EXAMEN"."AUTH_GROUP" ADD UNIQUE ("NAME")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table AUTH_GROUP_PERMISSIONS
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."AUTH_GROUP_PERMISSIONS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."AUTH_GROUP_PERMISSIONS" MODIFY ("GROUP_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."AUTH_GROUP_PERMISSIONS" MODIFY ("PERMISSION_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."AUTH_GROUP_PERMISSIONS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "C##EXAMEN"."AUTH_GROUP_PERMISSIONS" ADD CONSTRAINT "AUTH_GROU_GROUP_ID__0CD325B0_U" UNIQUE ("GROUP_ID", "PERMISSION_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table AUTH_PERMISSION
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."AUTH_PERMISSION" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."AUTH_PERMISSION" MODIFY ("CONTENT_TYPE_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."AUTH_PERMISSION" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "C##EXAMEN"."AUTH_PERMISSION" ADD CONSTRAINT "AUTH_PERM_CONTENT_T_01AB375A_U" UNIQUE ("CONTENT_TYPE_ID", "CODENAME")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table AUTH_USER
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."AUTH_USER" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."AUTH_USER" MODIFY ("IS_SUPERUSER" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."AUTH_USER" MODIFY ("IS_STAFF" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."AUTH_USER" MODIFY ("IS_ACTIVE" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."AUTH_USER" MODIFY ("DATE_JOINED" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."AUTH_USER" ADD CHECK ("IS_SUPERUSER" IN (0,1)) ENABLE;
+  ALTER TABLE "C##EXAMEN"."AUTH_USER" ADD CHECK ("IS_STAFF" IN (0,1)) ENABLE;
+  ALTER TABLE "C##EXAMEN"."AUTH_USER" ADD CHECK ("IS_ACTIVE" IN (0,1)) ENABLE;
+  ALTER TABLE "C##EXAMEN"."AUTH_USER" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "C##EXAMEN"."AUTH_USER" ADD UNIQUE ("USERNAME")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table AUTH_USER_GROUPS
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."AUTH_USER_GROUPS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."AUTH_USER_GROUPS" MODIFY ("USER_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."AUTH_USER_GROUPS" MODIFY ("GROUP_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."AUTH_USER_GROUPS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "C##EXAMEN"."AUTH_USER_GROUPS" ADD CONSTRAINT "AUTH_USER_USER_ID_G_94350C0C_U" UNIQUE ("USER_ID", "GROUP_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table AUTH_USER_USER_PERMISSIONS
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."AUTH_USER_USER_PERMISSIONS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."AUTH_USER_USER_PERMISSIONS" MODIFY ("USER_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."AUTH_USER_USER_PERMISSIONS" MODIFY ("PERMISSION_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."AUTH_USER_USER_PERMISSIONS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "C##EXAMEN"."AUTH_USER_USER_PERMISSIONS" ADD CONSTRAINT "AUTH_USER_USER_ID_P_14A6B632_U" UNIQUE ("USER_ID", "PERMISSION_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table BLOG_CATEGORIA
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."BLOG_CATEGORIA" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."BLOG_CATEGORIA" MODIFY ("CREATED" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."BLOG_CATEGORIA" MODIFY ("UPDATED" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."BLOG_CATEGORIA" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table BLOG_POST
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."BLOG_POST" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."BLOG_POST" MODIFY ("CREATED" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."BLOG_POST" MODIFY ("UPDATED" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."BLOG_POST" MODIFY ("AUTOR_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."BLOG_POST" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table BLOG_POST_CATEGORIAS
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."BLOG_POST_CATEGORIAS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."BLOG_POST_CATEGORIAS" MODIFY ("POST_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."BLOG_POST_CATEGORIAS" MODIFY ("CATEGORIA_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."BLOG_POST_CATEGORIAS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "C##EXAMEN"."BLOG_POST_CATEGORIAS" ADD CONSTRAINT "BLOG_POST_POST_ID_C_70B54E48_U" UNIQUE ("POST_ID", "CATEGORIA_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table DJANGO_ADMIN_LOG
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."DJANGO_ADMIN_LOG" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."DJANGO_ADMIN_LOG" MODIFY ("ACTION_TIME" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."DJANGO_ADMIN_LOG" MODIFY ("ACTION_FLAG" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."DJANGO_ADMIN_LOG" MODIFY ("USER_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."DJANGO_ADMIN_LOG" ADD CHECK ("ACTION_FLAG" >= 0) ENABLE;
+  ALTER TABLE "C##EXAMEN"."DJANGO_ADMIN_LOG" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table DJANGO_CONTENT_TYPE
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."DJANGO_CONTENT_TYPE" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."DJANGO_CONTENT_TYPE" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "C##EXAMEN"."DJANGO_CONTENT_TYPE" ADD CONSTRAINT "DJANGO_CO_APP_LABEL_76BD3D3B_U" UNIQUE ("APP_LABEL", "MODEL")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table DJANGO_MIGRATIONS
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."DJANGO_MIGRATIONS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."DJANGO_MIGRATIONS" MODIFY ("APPLIED" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."DJANGO_MIGRATIONS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table DJANGO_SESSION
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."DJANGO_SESSION" MODIFY ("SESSION_KEY" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."DJANGO_SESSION" MODIFY ("EXPIRE_DATE" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."DJANGO_SESSION" ADD PRIMARY KEY ("SESSION_KEY")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table LINEAPEDIDOS
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."LINEAPEDIDOS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."LINEAPEDIDOS" MODIFY ("CANTIDAD" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."LINEAPEDIDOS" MODIFY ("CREATED_AT" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."LINEAPEDIDOS" MODIFY ("PEDIDO_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."LINEAPEDIDOS" MODIFY ("PRODUCTO_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."LINEAPEDIDOS" MODIFY ("USER_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."LINEAPEDIDOS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table PEDIDOS
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."PEDIDOS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."PEDIDOS" MODIFY ("CREATED_AT" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."PEDIDOS" MODIFY ("USER_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."PEDIDOS" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table SERVICIOS_SERVICIO
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."SERVICIOS_SERVICIO" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."SERVICIOS_SERVICIO" MODIFY ("CREATED" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."SERVICIOS_SERVICIO" MODIFY ("UPDATED" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."SERVICIOS_SERVICIO" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table TIENDA_CATEGORIAPROD
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."TIENDA_CATEGORIAPROD" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."TIENDA_CATEGORIAPROD" MODIFY ("CREATED" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."TIENDA_CATEGORIAPROD" MODIFY ("UPDATED" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."TIENDA_CATEGORIAPROD" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table TIENDA_CLIENTE
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."TIENDA_CLIENTE" MODIFY ("RUT" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."TIENDA_CLIENTE" MODIFY ("TELEFONO" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."TIENDA_CLIENTE" MODIFY ("GENERO_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."TIENDA_CLIENTE" ADD PRIMARY KEY ("RUT")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table TIENDA_GENERO
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."TIENDA_GENERO" MODIFY ("IDGENERO" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."TIENDA_GENERO" ADD PRIMARY KEY ("IDGENERO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table TIENDA_PRODUCTO
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."TIENDA_PRODUCTO" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."TIENDA_PRODUCTO" MODIFY ("PRECIO" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."TIENDA_PRODUCTO" MODIFY ("DISPONIBILIDAD" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."TIENDA_PRODUCTO" MODIFY ("CATEGORIAS_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."TIENDA_PRODUCTO" ADD CHECK ("DISPONIBILIDAD" IN (0,1)) ENABLE;
+  ALTER TABLE "C##EXAMEN"."TIENDA_PRODUCTO" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "C##EXAMEN"."TIENDA_PRODUCTO" MODIFY ("CREATED" NOT NULL ENABLE);
+  ALTER TABLE "C##EXAMEN"."TIENDA_PRODUCTO" MODIFY ("UPDATED" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Ref Constraints for Table AUTH_GROUP_PERMISSIONS
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."AUTH_GROUP_PERMISSIONS" ADD CONSTRAINT "AUTH_GROU_GROUP_ID_B120CBF9_F" FOREIGN KEY ("GROUP_ID")
+	  REFERENCES "C##EXAMEN"."AUTH_GROUP" ("ID") DEFERRABLE INITIALLY DEFERRED ENABLE;
+  ALTER TABLE "C##EXAMEN"."AUTH_GROUP_PERMISSIONS" ADD CONSTRAINT "AUTH_GROU_PERMISSIO_84C5C92E_F" FOREIGN KEY ("PERMISSION_ID")
+	  REFERENCES "C##EXAMEN"."AUTH_PERMISSION" ("ID") DEFERRABLE INITIALLY DEFERRED ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table AUTH_PERMISSION
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."AUTH_PERMISSION" ADD CONSTRAINT "AUTH_PERM_CONTENT_T_2F476E4B_F" FOREIGN KEY ("CONTENT_TYPE_ID")
+	  REFERENCES "C##EXAMEN"."DJANGO_CONTENT_TYPE" ("ID") DEFERRABLE INITIALLY DEFERRED ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table AUTH_USER_GROUPS
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."AUTH_USER_GROUPS" ADD CONSTRAINT "AUTH_USER_USER_ID_6A12ED8B_F" FOREIGN KEY ("USER_ID")
+	  REFERENCES "C##EXAMEN"."AUTH_USER" ("ID") DEFERRABLE INITIALLY DEFERRED ENABLE;
+  ALTER TABLE "C##EXAMEN"."AUTH_USER_GROUPS" ADD CONSTRAINT "AUTH_USER_GROUP_ID_97559544_F" FOREIGN KEY ("GROUP_ID")
+	  REFERENCES "C##EXAMEN"."AUTH_GROUP" ("ID") DEFERRABLE INITIALLY DEFERRED ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table AUTH_USER_USER_PERMISSIONS
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."AUTH_USER_USER_PERMISSIONS" ADD CONSTRAINT "AUTH_USER_USER_ID_A95EAD1B_F" FOREIGN KEY ("USER_ID")
+	  REFERENCES "C##EXAMEN"."AUTH_USER" ("ID") DEFERRABLE INITIALLY DEFERRED ENABLE;
+  ALTER TABLE "C##EXAMEN"."AUTH_USER_USER_PERMISSIONS" ADD CONSTRAINT "AUTH_USER_PERMISSIO_1FBB5F2C_F" FOREIGN KEY ("PERMISSION_ID")
+	  REFERENCES "C##EXAMEN"."AUTH_PERMISSION" ("ID") DEFERRABLE INITIALLY DEFERRED ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table BLOG_POST
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."BLOG_POST" ADD CONSTRAINT "BLOG_POST_AUTOR_ID_8811EA21_F" FOREIGN KEY ("AUTOR_ID")
+	  REFERENCES "C##EXAMEN"."AUTH_USER" ("ID") DEFERRABLE INITIALLY DEFERRED ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table BLOG_POST_CATEGORIAS
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."BLOG_POST_CATEGORIAS" ADD CONSTRAINT "BLOG_POST_POST_ID_212BF44C_F" FOREIGN KEY ("POST_ID")
+	  REFERENCES "C##EXAMEN"."BLOG_POST" ("ID") DEFERRABLE INITIALLY DEFERRED ENABLE;
+  ALTER TABLE "C##EXAMEN"."BLOG_POST_CATEGORIAS" ADD CONSTRAINT "BLOG_POST_CATEGORIA_F3743C06_F" FOREIGN KEY ("CATEGORIA_ID")
+	  REFERENCES "C##EXAMEN"."BLOG_CATEGORIA" ("ID") DEFERRABLE INITIALLY DEFERRED ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table DJANGO_ADMIN_LOG
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."DJANGO_ADMIN_LOG" ADD CONSTRAINT "DJANGO_AD_CONTENT_T_C4BCE8EB_F" FOREIGN KEY ("CONTENT_TYPE_ID")
+	  REFERENCES "C##EXAMEN"."DJANGO_CONTENT_TYPE" ("ID") DEFERRABLE INITIALLY DEFERRED ENABLE;
+  ALTER TABLE "C##EXAMEN"."DJANGO_ADMIN_LOG" ADD CONSTRAINT "DJANGO_AD_USER_ID_C564EBA6_F" FOREIGN KEY ("USER_ID")
+	  REFERENCES "C##EXAMEN"."AUTH_USER" ("ID") DEFERRABLE INITIALLY DEFERRED ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table LINEAPEDIDOS
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."LINEAPEDIDOS" ADD CONSTRAINT "LINEAPEDI_PRODUCTO__017E915F_F" FOREIGN KEY ("PRODUCTO_ID")
+	  REFERENCES "C##EXAMEN"."TIENDA_PRODUCTO" ("ID") DEFERRABLE INITIALLY DEFERRED ENABLE;
+  ALTER TABLE "C##EXAMEN"."LINEAPEDIDOS" ADD CONSTRAINT "LINEAPEDI_USER_ID_8BA34654_F" FOREIGN KEY ("USER_ID")
+	  REFERENCES "C##EXAMEN"."AUTH_USER" ("ID") DEFERRABLE INITIALLY DEFERRED ENABLE;
+  ALTER TABLE "C##EXAMEN"."LINEAPEDIDOS" ADD CONSTRAINT "LINEAPEDI_PEDIDO_ID_2863D42C_F" FOREIGN KEY ("PEDIDO_ID")
+	  REFERENCES "C##EXAMEN"."PEDIDOS" ("ID") DEFERRABLE INITIALLY DEFERRED ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table PEDIDOS
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."PEDIDOS" ADD CONSTRAINT "PEDIDOS_USER_ID_C7DB7FF2_F" FOREIGN KEY ("USER_ID")
+	  REFERENCES "C##EXAMEN"."AUTH_USER" ("ID") DEFERRABLE INITIALLY DEFERRED ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table TIENDA_CLIENTE
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."TIENDA_CLIENTE" ADD CONSTRAINT "TIENDA_CL_GENERO_ID_8E4C97A1_F" FOREIGN KEY ("GENERO_ID")
+	  REFERENCES "C##EXAMEN"."TIENDA_GENERO" ("IDGENERO") DEFERRABLE INITIALLY DEFERRED ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table TIENDA_PRODUCTO
+--------------------------------------------------------
+
+  ALTER TABLE "C##EXAMEN"."TIENDA_PRODUCTO" ADD CONSTRAINT "TIENDA_PR_CATEGORIA_462AA648_F" FOREIGN KEY ("CATEGORIAS_ID")
+	  REFERENCES "C##EXAMEN"."TIENDA_CATEGORIAPROD" ("ID") DEFERRABLE INITIALLY DEFERRED ENABLE;

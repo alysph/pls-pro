@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Api Clientes</title>
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <link rel="icon" href="{% static 'img/logo_1.ico' %}">
+     <!-- ICONOS FONT AWESOME -->
+     <script src="https://kit.fontawesome.com/64d58efce2.js"crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+          $("#enviar").click(function(){
+
+              $.get("http://127.0.0.1:8000/listar_clientes",function(data){
+
+                  $.each(data,function(i,item)
+                      {
+                          $("#clientes").append("<tr><td>"+ item.rut +
+                          "</td><td>"+ item.nombre +
+                          "</td><td>"+ item.correo +
+                          "</td><td>"+ item.telefono +
+                            "</td><td>"+ item.direccion +
+                          "</td><tr>");
+                        
+                      });
+              });
+          });
+      });
+  </script>
+</head>
+<body>
+     <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}">PELUSHOP</a>
+      <img src="{% static 'ProyectoWebApp/img/logo.png' %}" alt="logo" width="200px">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'servicios' %}">¿Quiénes somos?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'galeria' %}">Galería</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'contacto' %}">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'tienda' %}">Tienda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'blog' %}">Blog</a>
+          </li>
+          {% if perms.tienda.add_producto %}
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'agregarp' %}">Agregar producto</a>
+          </li>
+          {% endif %}
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'listarp' %}">Listar productos</a>
+          </li>
+          {% endif %}
+          {% if perms.tienda.add_cliente %}
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'agregarc' %}">Agregar Cliente</a>
+          </li>
+          {% endif %}
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'listarc' %}">Listar Clientes</a>
+          </li>
+          {% endif %}
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'listar_clientes' %}">API clientes</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <br>
+    <div class="container-mon">
+        <h1>API CLIENTES </h1><br>
+
+        <button id="enviar" style="background-color: #aaaaaa; width: 200px; height: 50px;  
+        padding: 10px; font-size: 20px; justify-content: center; margin: 20px; align-items: center;">Consultar datos...</button><br><br>
+        <table class="table table-striped table-bordered align-middle table-responsive-sm" id="clientes">
+            <thead>
+                <tr>
+                    <th>RUT</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Telefóno</th>
+                    <th>Dirección</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <!-- FOOTER -->
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+          <!-- LOGO -->
+          <div class="box">
+            <figure>
+              <a href="{% url 'index' %}">
+                <img src="{% static 'img/logo.png' %}" alt="Logo Pelushop">
+              </a>
+            </figure>
+          </div>
+          <!-- SOBRE NOSOTROS (FOOTER) -->
+          <div class="box">
+            <h2>SOBRE NOSOTROS</h2>
+            <p>Nuestro equipo se asegura de entregar el mejor servicio, tan cercano a la perfección como nos sea posible.
+              Tenemos los mejores productos de afamadas marcas a nivel mundial. Tenemos el compromiso de entregar sólo lo mejor a ti y tus mascotas.</p>
+            <p>Realizamos despachos a todo Chile con Chilexpress o Starken. Y contamos con despacho propio a comunas seleccionadas.</p>
+          </div>
+          <!-- REDES SOCIALES -->
+          <div class="box">
+            <h2>SIGUENOS</h2>
+            <div class="red-social">
+              <a href="https://www.facebook.com/laikamascotaschile/" class="fa fa-facebook"></a>
+              <a href="https://www.instagram.com/mascotas_online/" class="fa fa-instagram"></a>
+              <a href="https://twitter.com/solomascotas3" class="fa fa-twitter"></a>
+              <a href="https://www.google.cl/maps/place/Duoc/@-33.5105821,-70.7594494,17z/data=!3m1!4b1!4m5!3m4!1s0x9662dd9feb5cec6d:0x8be082d05dc53ccd!8m2!3d-33.5105866!4d-70.7572607" class="fa fa-map"></a>
+            </div>
+          </div>
+        </div>
+        <!-- DERECHOS -->
+        <div class="grupo-2">
+          <small>&copy; 2022 <b>Alison Urrea - Pelushop</b> - Todos los derechos reservados</small>
+        </div>
+      </footer>
+
+      <script src="{% static 'js/java.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

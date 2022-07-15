@@ -1,0 +1,67 @@
+{% extends "ProyectoWebApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <!-- GALERÍA DE FOTOS -->
+    <div class="galeria">
+      <script>
+      function CambiaColor(a)
+        {
+            a.style.background = "orange";
+        }
+      </script>
+      <h1 onmouseover="style.color = 'red'" onmouseout="style.color= 'white'">
+        Galería de fotos
+      </h1>
+      <div class="linea"></div>
+      <div class="contenedor-imagenes">
+      <div class="imagen">
+        <img src="{% static 'ProyectoWebApp/img/collar_gato.jpg' %}" alt="">
+        <div class="overlay">
+          <h2>Collar de gato $3.000</h2>
+          <p>Este collar vino a hacer de tu mascota el animal más vistoso y con el mejor estilo de la casa.</p>
+        </div>
+      </div>
+      <div class="imagen">
+        <img src="{% static 'ProyectoWebApp/img/collar_perro.jpg' %}" alt="">
+        <div class="overlay">
+          <h2>Collar de perro $5.000</h2>
+          <p>Collar para perros ajustable es suave y cómodo y cuenta con una hebilla de cierre a presión contorneada.</p>
+        </div>
+      </div>
+      <div class="imagen">
+        <img src="{% static 'ProyectoWebApp/img/arnes.jpg' %}" alt="">
+        <div class="overlay">
+          <h2>Arnés de gato $4.000</h2>
+          <p>Arnés para gato ajustable con brillos, viene con correa incluida, para salir de paseo.</p>
+        </div>
+      </div>
+      <div class="imagen">
+        <img src="{% static 'ProyectoWebApp/img/bandama.jpg' %}" alt="">
+        <div class="overlay">
+          <h2>Bandanas para perros $3.000</h2>
+          <p>Este collar vino a hacer de tu mascota el animal más vistoso y con el mejor estilo de la casa. Materiales de buena calidad.</p>
+        </div>
+      </div>
+      <div class="imagen">
+        <img src="{% static 'ProyectoWebApp/img/ropa_gato.jpg' %}" alt="">
+        <div class="overlay">
+          <h2>Ropa de gato $5.000</h2>
+          <p>La ropa está hecha de un poliéster suave, acogedor y libre de tóxicos. Nuestro Cosplay está confeccionado en las condiciones más limpias.</p>
+        </div>
+      </div>
+      <div class="imagen">
+        <img src="{% static 'ProyectoWebApp/img/ropa_perro.jpg' %}" alt="">
+        <div class="overlay">
+          <h2>Ropa de perro $5.000</h2>
+          <p>La camiseta es una preciosa prenda de ropa que está fabricada con 100% de algodón.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+    <br>
+    <br>
+      </body>
+      </html>
+{% endblock %}

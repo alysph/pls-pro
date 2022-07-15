@@ -1,0 +1,84 @@
+{% extends "ProyectoWebApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+      <!-- CARRUSEL -->
+      <div class="container-fluid">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{% static 'ProyectoWebApp/img/tienda_1.jpg' %}" class="d-block w-100" alt="Tienda">
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'ProyectoWebApp/img/mascotas_3.jpg' %}" class="d-block w-100" alt="Mascota_3">
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'ProyectoWebApp/img/tienda_2.jpg' %}" class="d-block w-100" alt="Tienda_2">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- INDEX -->
+      <div class="container-all">
+        <script>
+                  function CambiaColor(a)
+        {
+            a.style.background = "orange";
+        }
+        </script>
+        <h1 onmouseover="style.color = 'red'" onmouseout="style.color= 'white'">
+           ¿Quiénes somos?
+          </h1>
+        <h2>Nosotros</h2>
+        <br>
+        <p>Somos una PYME de amantes de las mascotas, ya sea perro o gato. Contamos con muchos productos de calidad y de diferentes precios, ajustables a su cartera.
+          También tenemos la mejor atención al cliente, tanto en local como online. Nos encargamos día a día de entregarle el mejor servicio a usted
+          y a todos los visitantes o compradores de nuestra pequeña empresa.</p>
+          <br>
+          <img src="{% static 'ProyectoWebApp/img/quienesomos.jpg' %}" class="img-fluid" alt="quienesomos">
+        <br>
+        <p>El sitio web se creó básicamente porque por redes sociales no nos daba el abasto suficiente como lo haría una página web.
+          Se elaboró con la intención de ayudar a ordenar presupuestos, mejorar finanzas y mejorar la venta/despacho de todos nuestros productos para ustedes.</p>
+        <h3>Misión</h3>
+        <p>Crear un mundo mejor, ayudando a amar y proteger a nuestras mascotas con nuestros productos, tanto en el cuidado de su piel y pelaje.
+          Invirtiendo en este proyecto para ampliar la estructura y seguir creciendo en otras comunas o ciudades de nuestro país.</p>
+        <br>
+        <h3>Visión</h3>
+        <p>Ser una empresa moderna, sólida, de máxima calidad y enfocado a las necesidades reales de nuestras mascotas. Líder en el país y con proyección internacional.</p>
+        <br>
+        <hr>
+        <h1 style="align-items: center;">Servicios</h1>
+        <br>
+        {% for servicio in servicios %}
+        
+        <section class="page-section clearfix">
+          <div class="container">
+            <div class="intro">
+              <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{servicio.imagen.url}}" alt="">
+              <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                <h2 class="section-heading mb-4">
+                  <span class="section-heading-lower">{{servicio.titulo}}</span>
+                  <hr>
+                  <span class="section-heading-upper">{{servicio.contenido}}</span>
+                </h2>
+              </div>
+            </div>
+          </div>
+        </section> 
+      
+        {% endfor %}
+        
+        <h1 onmouseover="style.color = 'red'" onmouseout="style.color= 'white'">
+          VÍDEO
+        </h1>
+        <div class="cont">
+          <div class="ratio ratio-16x9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/-WZJi3Ei4yE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <br>
+        </div>
+    </div>
+      </body>
+      </html>
+{% endblock %}

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'ProyectoWebApp',
     'django.contrib.humanize',
     'crispy_forms',
+    'crispy_bootstrap4',
     'rest_framework',
     'servicios',
     'blog',
@@ -89,16 +90,9 @@ WSGI_APPLICATION = 'ProyectoWeb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.oracle',
-        'NAME': '127.0.0.1:1521/xe',
-        'USER': 'c##examen',
-        'PASSWORD': 'examen',
-        'TEST': {
-            'USER': 'default_test',
-            'TBLSPACE': 'default_test_tbls',
-            'TBLSPACE_TMP': 'default_test_tbls_tmp',
-        },
-    },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 
@@ -165,3 +159,5 @@ MESSAGE_TAGS={
     mensajes_de_error.WARNING: 'warning',
     mensajes_de_error.ERROR: 'danger',
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
